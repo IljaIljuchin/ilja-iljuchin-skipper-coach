@@ -73,21 +73,15 @@ h2 { font-size: clamp(36px, 3.4vw, 55px); margin: 12px 0 18px; }
   z-index: -1;
   background: var(--hero-shade), var(--hero-img) center 65% / cover no-repeat;
 }
-.hero.hero-coach::before {
-  background: linear-gradient(125deg, color-mix(in srgb, var(--soft) 24%, var(--card)) 0%, var(--card) 60%, var(--page) 100%);
-}
 .hero-copy { padding: clamp(34px, 4.5vw, 68px) 0 44px; }
-.hero-sub .hero-copy { padding: clamp(28px, 3.8vw, 52px) 0 40px; }
 h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
-.hero-sub h1 { font-size: clamp(46px, 6vw, 84px); }
 .role {
   display: block;
   color: var(--accent);
   font: italic clamp(36px, 4.2vw, 67px)/1.18 Georgia, serif;
   letter-spacing: -.045em;
 }
-.hero-sub .role { font-size: clamp(26px, 3vw, 44px); }
-.tagline { font-size: 16px; line-height: 1.65; max-width: 54ch; margin: 19px 0 24px; }
+.tagline { font-size: 16px; line-height: 1.65; margin: 19px 0 24px; }
 .cta {
   display: flex;
   align-items: center;
@@ -100,15 +94,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   font-weight: 700;
 }
 .cta:hover { text-decoration: underline; text-underline-offset: 4px; }
-.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
-.ghost-link {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.ghost-link:hover { color: var(--accent); }
 
 /* ---------- Bio + contact card ---------- */
 .content {
@@ -187,7 +172,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 @supports not (background: color-mix(in srgb, red, blue)) {
   .experience, .detail-card, .qual-grid li { --wash: #F3F7FA; --line: #B8CEE3; }
   .experience.coaching, .detail-card.coaching, .qual-grid li.coaching { --wash: #F7EEEA; --line: #E6C0C6; }
-  .hero.hero-coach::before { background: #FAF6F0; }
 }
 
 .experience-pair {
