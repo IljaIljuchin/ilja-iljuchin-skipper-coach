@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Executive &amp; Team Coach — Ilja Iljuchin</title>
+<title>Executive &amp; Team Coaching — Ilja Iljuchin</title>
 <meta name="description" content="1:1 executive coaching and agile team coaching. 20 years leading complex teams, 500+ team coaching hours, 250+ 1:1 hours, ICF-accredited training, HEXACO, CliftonStrengths and Hogan.">
 <meta name="author" content="Ilja Iljuchin">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -16,7 +16,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ilja Iljuchin">
-<meta property="og:title" content="Executive &amp; Team Coach — Ilja Iljuchin">
+<meta property="og:title" content="Executive &amp; Team Coaching — Ilja Iljuchin">
 <meta property="og:description" content="1:1 coaching for business owners and C-level leaders navigating career pivots, leadership plateaus, or early burnout, plus agile team transformation.">
 <meta property="og:url" content="https://ilja-iljuchin-skipper-coach.vercel.app/coach.html">
 <meta property="og:locale" content="en_US">
@@ -25,7 +25,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ilja Iljuchin, Executive and Team Coach">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Executive &amp; Team Coach — Ilja Iljuchin">
+<meta name="twitter:title" content="Executive &amp; Team Coaching — Ilja Iljuchin">
 <meta name="twitter:description" content="1:1 coaching for business owners and C-level leaders navigating career pivots, leadership plateaus, or early burnout.">
 <meta name="twitter:image" content="https://ilja-iljuchin-skipper-coach.vercel.app/assets/og-image.jpg">
 <meta name="twitter:image:alt" content="Ilja Iljuchin, Executive and Team Coach">
@@ -40,11 +40,11 @@
   <div class="wrap">
     <nav class="site-nav" aria-label="Primary">
       <a href="./">Home</a>
-      <a href="./skipper.html">Skipper</a>
-      <a href="./coach.html" aria-current="page">Coach</a>
+      <a href="./skipper.html">Skippering</a>
+      <a href="./coach.html" aria-current="page">Coaching</a>
     </nav>
     <div class="hero-copy">
-      <h1>Ilja Iljuchin <span class="role">Executive Coach</span></h1>
+      <h1>Ilja Iljuchin <span class="role">Executive Coaching</span></h1>
       <p class="tagline">1:1 executive and team coaching,<br>for clear decisions under pressure.</p>
       <a class="cta" href="https://cal.com/ilja-iljuchin/quick-chat-30-min" target="_blank" rel="noopener noreferrer">Book a call</a>
     </div>
@@ -90,15 +90,47 @@
 </section>
 
 <section class="wrap page-bridge" aria-labelledby="bridge-title">
-  <div>
-    <h2 id="bridge-title">Looking for a full CV &amp; bio?</h2>
-    <p>Send a quick inquiry to request my executive and coaching CV—or explore my offshore skippering background if you are looking for a skipper.</p>
-  </div>
-  <div class="bridge-actions">
-    <a class="cta" href="mailto:Ilja.iljuchin@icloud.com?subject=Coaching%20CV%20Request&amp;body=Hi%20Ilja%2C%0A%0AI%27d%20like%20to%20request%20your%20Coaching%20CV.">Request Coaching CV</a>
-    <a class="card-link" href="./skipper.html">Explore Skippering <span aria-hidden="true">&rarr;</span></a>
+  <h2 id="bridge-title">Request my Coaching CV</h2>
+  <div class="bridge-cols">
+    <div>
+      <p>Leave your name and email and I'll send you my executive and coaching CV. Or connect with me directly on LinkedIn.</p>
+      <div class="bridge-actions">
+        <a class="cta" href="https://www.linkedin.com/in/iljuchin/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        <a class="card-link" href="./skipper.html">Explore Skippering <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    <form class="cv-form" id="cv-form" data-type="coaching">
+      <label>Name <input type="text" name="name" required autocomplete="name"></label>
+      <label>Email <input type="email" name="email" required autocomplete="email"></label>
+      <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <label>Message <span style="font-weight:400;opacity:.6">(optional)</span>
+        <textarea name="message" rows="2" placeholder="Anything I should know in advance?"></textarea>
+      </label>
+      <button type="submit">Send request</button>
+      <p class="form-msg" aria-live="polite"></p>
+    </form>
   </div>
 </section>
+
+<script>
+document.getElementById('cv-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const f = e.target, btn = f.querySelector('button'), msg = f.querySelector('.form-msg');
+  if (f.website.value) return; // honeypot
+  btn.disabled = true; msg.textContent = 'Sending…';
+  try {
+    const res = await fetch('/api/request-cv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: f.name.value, email: f.email.value, type: f.dataset.type, message: f.message.value })
+    });
+    const data = await res.json();
+    if (data.ok) { msg.textContent = '✓ Request sent — I'll get back to you shortly!'; f.reset(); }
+    else { msg.textContent = data.error || 'Something went wrong.'; }
+  } catch { msg.textContent = 'Network error — please try again.'; }
+  btn.disabled = false;
+});
+</script>
 
 </main>
 <footer class="wrap">
