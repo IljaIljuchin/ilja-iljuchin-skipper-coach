@@ -90,37 +90,17 @@
 </section>
 
 <section class="wrap page-bridge" aria-labelledby="bridge-title">
-  <h2 id="bridge-title">Request my Sailing CV</h2>
   <div class="bridge-cols">
     <div>
+      <h2 id="bridge-title">Request my Sailing CV</h2>
       <p>Interested in my full skippering CV and passage log? Reach out directly via Facebook or explore my coaching work.</p>
-      <div class="bridge-actions">
-        <a class="cta" href="https://www.facebook.com/ilja.skipper/" target="_blank" rel="noopener noreferrer">Connect via Facebook</a>
-        <a class="card-link" href="./coach.html">Explore Coaching <span aria-hidden="true">&rarr;</span></a>
-      </div>
+    </div>
+    <div class="bridge-actions">
+      <a class="cta" href="https://www.facebook.com/ilja.skipper/" target="_blank" rel="noopener noreferrer">Connect via Facebook</a>
+      <a class="card-link" href="./coach.html">Explore Coaching <span aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
-
-<script>
-document.getElementById('cv-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const f = e.target, btn = f.querySelector('button'), msg = f.querySelector('.form-msg');
-  if (f.website.value) return; // honeypot
-  btn.disabled = true; msg.textContent = 'Sending…';
-  try {
-    const res = await fetch('/api/request-cv', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: f.name.value, email: f.email.value, type: f.dataset.type, message: f.message.value })
-    });
-    const data = await res.json();
-    if (data.ok) { msg.textContent = '✓ Request sent — I'll get back to you shortly!'; f.reset(); }
-    else { msg.textContent = data.error || 'Something went wrong.'; }
-  } catch { msg.textContent = 'Network error — please try again.'; }
-  btn.disabled = false;
-});
-</script>
 
 </main>
 <footer class="wrap">

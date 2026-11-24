@@ -270,16 +270,14 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   border-radius: 9px;
 }
 .page-bridge h2 { font-size: clamp(26px, 2.4vw, 36px); margin: 0 0 8px; }
-.page-bridge p { font-size: 15px; line-height: 1.6; margin: 0 0 20px; max-width: 56ch; }
-.bridge-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 16px; }
+.page-bridge p { font-size: 15px; line-height: 1.6; margin: 0; max-width: 56ch; }
+.bridge-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
 .bridge-cols {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px 40px;
-  align-items: start;
-}
-@media (max-width: 760px) {
-  .bridge-cols { grid-template-columns: 1fr; }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 32px;
 }
 
 /* ---------- Qualifications ---------- */
