@@ -274,47 +274,13 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .bridge-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 16px; }
 .bridge-cols {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px 40px;
   align-items: start;
 }
 @media (max-width: 760px) {
   .bridge-cols { grid-template-columns: 1fr; }
 }
-
-/* ---------- CV Request Form ---------- */
-.cv-form { display: flex; flex-direction: column; gap: 12px; }
-.cv-form label { font-size: 14px; font-weight: 700; display: flex; flex-direction: column; gap: 4px; }
-.cv-form input,
-.cv-form textarea {
-  padding: 10px 12px;
-  border: 1px solid var(--soft);
-  border-radius: 5px;
-  font: 15px/1.4 Arial, Helvetica, sans-serif;
-  color: var(--ink);
-  background: var(--page);
-}
-.cv-form input:focus,
-.cv-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
-}
-.cv-form textarea { resize: vertical; min-height: 60px; }
-.cv-form .hp { position: absolute; left: -9999px; }
-.cv-form button {
-  align-self: flex-start;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  background: var(--action);
-  color: var(--page);
-  font: 700 16px/1.2 Arial, Helvetica, sans-serif;
-  cursor: pointer;
-}
-.cv-form button:hover { opacity: .9; }
-.cv-form button:disabled { opacity: .5; cursor: wait; }
-.cv-form .form-msg { font-size: 14px; line-height: 1.5; min-height: 21px; }
 
 /* ---------- Qualifications ---------- */
 .qualifications { padding: 36px 0 54px; border-top: 1px solid var(--soft); }
