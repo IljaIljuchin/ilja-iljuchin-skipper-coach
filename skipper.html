@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Offshore Skippering — Ilja Iljuchin</title>
-<meta name="description" content="Offshore skippering with 2,750+ NM, ~211 sea days, and RYA/MCA Yachtmaster Offshore. Calm decisions under pressure, safety briefings, and crew coordination.">
+<title>Offshore Skipper — Ilja Iljuchin</title>
+<meta name="description" content="Offshore skipper with 2,750+ NM, ~211 sea days, and RYA/MCA Yachtmaster Offshore. Calm decisions under pressure, safety briefings, and crew coordination.">
 <meta name="author" content="Ilja Iljuchin">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#FFFFFF">
@@ -16,8 +16,8 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ilja Iljuchin">
-<meta property="og:title" content="Offshore Skippering — Ilja Iljuchin">
-<meta property="og:description" content="Offshore skippering with 2,750+ NM, ~211 sea days, and RYA/MCA Yachtmaster Offshore. Calm decisions under pressure, safety briefings, and crew coordination.">
+<meta property="og:title" content="Offshore Skipper — Ilja Iljuchin">
+<meta property="og:description" content="Offshore skipper with 2,750+ NM, ~211 sea days, and RYA/MCA Yachtmaster Offshore. Calm decisions under pressure, safety briefings, and crew coordination.">
 <meta property="og:url" content="https://ilja-iljuchin-skipper-coach.vercel.app/skipper.html">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ilja-iljuchin-skipper-coach.vercel.app/assets/og-image.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ilja Iljuchin, Offshore Skipper, over an offshore sunset with two crew members on deck">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Offshore Skippering — Ilja Iljuchin">
-<meta name="twitter:description" content="Offshore skippering with 2,750+ NM, ~211 sea days, and RYA/MCA Yachtmaster Offshore.">
+<meta name="twitter:title" content="Offshore Skipper — Ilja Iljuchin">
+<meta name="twitter:description" content="Offshore skipper with 2,750+ NM, ~211 sea days, and RYA/MCA Yachtmaster Offshore.">
 <meta name="twitter:image" content="https://ilja-iljuchin-skipper-coach.vercel.app/assets/og-image.jpg">
 <meta name="twitter:image:alt" content="Ilja Iljuchin, Offshore Skipper, over an offshore sunset with two crew members on deck">
 
@@ -40,11 +40,11 @@
   <div class="wrap">
     <nav class="site-nav" aria-label="Primary">
       <a href="./">Home</a>
-      <a href="./skipper.html" aria-current="page">Skippering</a>
-      <a href="./coach.html">Coaching</a>
+      <a href="./skipper.html" aria-current="page">Skipper</a>
+      <a href="./coach.html">Coach</a>
     </nav>
     <div class="hero-copy">
-      <h1>Ilja Iljuchin <span class="role">Offshore Skippering</span></h1>
+      <h1>Ilja Iljuchin <span class="role">Offshore Skipper</span></h1>
       <p class="tagline">Offshore passages, night watches,<br>and calm decisions under pressure.</p>
       <a class="cta" href="https://cal.com/ilja-iljuchin/quick-chat-30-min" target="_blank" rel="noopener noreferrer">Book a call</a>
     </div>
@@ -90,47 +90,15 @@
 </section>
 
 <section class="wrap page-bridge" aria-labelledby="bridge-title">
-  <h2 id="bridge-title">Request my Sailing CV</h2>
-  <div class="bridge-cols">
-    <div>
-      <p>Leave your name and email and I'll send you my full skippering CV and passage log. Or reach out directly via Messenger.</p>
-      <div class="bridge-actions">
-        <a class="cta" href="https://m.me/ilja.skipper?text=Hi%20Ilja%2C%20I%27d%20like%20to%20request%20your%20Sailing%20CV." target="_blank" rel="noopener noreferrer">Message on Messenger</a>
-        <a class="card-link" href="./coach.html">Explore Coaching <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-    <form class="cv-form" id="cv-form" data-type="sailing">
-      <label>Name <input type="text" name="name" required autocomplete="name"></label>
-      <label>Email <input type="email" name="email" required autocomplete="email"></label>
-      <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-      <label>Message <span style="font-weight:400;opacity:.6">(optional)</span>
-        <textarea name="message" rows="2" placeholder="Anything I should know in advance?"></textarea>
-      </label>
-      <button type="submit">Send request</button>
-      <p class="form-msg" aria-live="polite"></p>
-    </form>
+  <div>
+    <h2 id="bridge-title">Looking for a detailed Sailing CV?</h2>
+    <p>Send a quick inquiry to request my full skipper CV and passage log—or explore my coaching practice if you are looking for executive or team coaching.</p>
+  </div>
+  <div class="bridge-actions">
+    <a class="cta" href="mailto:Ilja.iljuchin@icloud.com?subject=Sailing%20CV%20Request&amp;body=Hi%20Ilja%2C%0A%0AI%27d%20like%20to%20request%20your%20Sailing%20CV.">Request Sailing CV</a>
+    <a class="card-link" href="./coach.html">Explore Coaching <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
-
-<script>
-document.getElementById('cv-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const f = e.target, btn = f.querySelector('button'), msg = f.querySelector('.form-msg');
-  if (f.website.value) return; // honeypot
-  btn.disabled = true; msg.textContent = 'Sending…';
-  try {
-    const res = await fetch('/api/request-cv', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: f.name.value, email: f.email.value, type: f.dataset.type, message: f.message.value })
-    });
-    const data = await res.json();
-    if (data.ok) { msg.textContent = '✓ Request sent — I'll get back to you shortly!'; f.reset(); }
-    else { msg.textContent = data.error || 'Something went wrong.'; }
-  } catch { msg.textContent = 'Network error — please try again.'; }
-  btn.disabled = false;
-});
-</script>
 
 </main>
 <footer class="wrap">

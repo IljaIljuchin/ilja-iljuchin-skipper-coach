@@ -3,12 +3,12 @@ VERSION:3.0
 N:Iljuchin;Ilja;;;
 FN:Ilja Iljuchin
 ORG:Skipper & Coach
+TEL;TYPE=CELL,VOICE:+420608480555
+EMAIL;TYPE=PREF,INTERNET:Ilja.iljuchin@icloud.com
 item1.URL:https://ilja-iljuchin-skipper-coach.vercel.app
 item1.X-ABLabel:Website
-item2.URL:https://cal.com/ilja-iljuchin/quick-chat-30-min
-item2.X-ABLabel:Cal.com
+item2.URL:https://www.facebook.com/ilja.skipper
+item2.X-ABLabel:Facebook
 item3.URL:https://www.linkedin.com/in/iljuchin/
 item3.X-ABLabel:LinkedIn
-item4.URL:https://www.facebook.com/ilja.skipper
-item4.X-ABLabel:Facebook
 END:VCARD
