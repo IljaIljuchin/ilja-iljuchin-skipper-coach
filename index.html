@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilja Iljuchin - Skipper & Coach</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f8; color: #333; text-align: center; padding: 40px 20px; }
+        .card { background: white; max-width: 400px; margin: 0 auto; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h1 { margin-bottom: 5px; font-size: 24px; }
+        p.title { color: #666; margin-top: 0; font-size: 15px; }
+        .btn { display: block; background: #007aff; color: white; text-decoration: none; padding: 14px; border-radius: 10px; font-weight: bold; margin: 15px 0; }
+        .links a { display: block; color: #007aff; text-decoration: none; margin: 10px 0; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Ilja Iljuchin</h1>
+        <p class="title">Skipper & Coach</p>
+        <a id="download-btn" href="vcard/contact.vcf" download="contact.vcf" class="btn">Save Contact to Phone</a>
+        <div class="links">
+            <a href="tel:+420608480555">Call: +420 608 480 555</a>
+            <a href="mailto:Ilja.iljuchin@icloud.com">Email: Ilja.iljuchin@icloud.com</a>
+            <a href="https://m.me/ilja.skipper" target="_blank">Messenger</a>
+            <a href="https://www.facebook.com/ilja.skipper" target="_blank">Facebook</a>
+            <a href="https://share.google/iccXLhKwEFwIG3v5z" target="_blank">Google Profile</a>
+        </div>
+    </div>
+    <script>
+        // Auto-trigger vCard download on page scan
+        window.addEventListener('DOMContentLoaded', () => {
+            const link = document.getElementById('download-btn');
+            if (link) { link.click(); }
+        });
+    </script>
+</body>
+</html>
