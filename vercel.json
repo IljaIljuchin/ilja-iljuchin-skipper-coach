@@ -1,4 +1,8 @@
 {
+  "rewrites": [
+    { "source": "/skipper", "destination": "/skipper.html" },
+    { "source": "/coach", "destination": "/coach.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
