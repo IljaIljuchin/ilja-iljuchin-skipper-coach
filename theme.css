@@ -110,23 +110,18 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   .intro-block h2, .intro-block p { max-width: 46rem; }
 }
 
-/* ---------- Bio + contact card ---------- */
+/* ---------- Bio + portrait ---------- */
 .content {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
-  gap: clamp(24px, 4vw, 64px);
+  grid-template-columns: minmax(0, 1.55fr) minmax(220px, 320px);
+  align-items: start;
+  gap: clamp(28px, 4vw, 64px);
   padding: 53px 0 64px;
 }
-.bio-heading {
-  display: flex;
-  align-items: center;
-  gap: clamp(14px, 2vw, 25px);
-  margin-bottom: 18px;
-}
-.bio-heading h2 { margin: 8px 0 0; }
+.bio h2 { margin: 0 0 18px; }
 .portrait {
-  flex: none;
-  width: clamp(78px, 8vw, 116px);
+  justify-self: end;
+  width: clamp(180px, 22vw, 300px);
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 50%;
@@ -209,6 +204,14 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 .experience h2 { font-size: clamp(28px, 2.5vw, 40px); margin: 0; text-wrap: balance; }
 .experience p { font-size: 15px; line-height: 1.6; margin: 0; }
+.bullet-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
 .scope p + p { margin-top: 10px; } /* NEW: více odstavců v .scope */
 
 .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
@@ -412,6 +415,7 @@ footer {
 }
 @media (max-width: 800px) {
   .content { grid-template-columns: minmax(0, 1fr); }
+  .portrait { justify-self: start; width: clamp(160px, 44vw, 240px); }
 }
 @media (max-width: 760px) {
   .wrap { width: 90%; }
