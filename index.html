@@ -1,174 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ilja Iljuchin — Offshore Skipper &amp; Leadership Coach</title>
-<meta name="description" content="Offshore skipper and leadership coach. I help founders, executives and sailing crews make clear decisions under pressure. Book a 30-minute call.">
-<meta name="author" content="Ilja Iljuchin">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#FFFFFF">
-<link rel="canonical" href="https://www.iljuchin.com/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Ilja Iljuchin — Skipper &amp; Executive Coach | Refining Soon</title>
+  <style>
+    :root {
+      --bg: #0c1218;
+      --surface: #121b24;
+      --text: #eef2f6;
+      --muted: #9aa7b5;
+      --line: rgba(238, 242, 246, 0.12);
+      --accent: #68b0ab;
+    }
 
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ilja Iljuchin">
-<meta property="og:title" content="Ilja Iljuchin — Offshore Skipper &amp; Leadership Coach">
-<meta property="og:description" content="Offshore skipper and leadership coach. I help founders, executives and sailing crews make clear decisions under pressure. Book a 30-minute call.">
-<meta property="og:url" content="https://www.iljuchin.com/">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.iljuchin.com/assets/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ilja Iljuchin, Skipper & Coach, over an offshore sunset with two crew members on deck">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ilja Iljuchin — Offshore Skipper &amp; Leadership Coach">
-<meta name="twitter:description" content="Offshore skipper and leadership coach. I help founders, executives and sailing crews make clear decisions under pressure. Book a 30-minute call.">
-<meta name="twitter:image" content="https://www.iljuchin.com/assets/og-image.jpg">
-<meta name="twitter:image:alt" content="Ilja Iljuchin, Skipper & Coach, over an offshore sunset with two crew members on deck">
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background: radial-gradient(circle at top, #172430 0%, var(--bg) 65%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-<link rel="preload" as="image" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d0819216-e46b-4460-8d85-805338a5821c-Wcl4h82j8YWh9R0fQahC6UXVomK5rb.jpg" fetchpriority="high">
-<link rel="stylesheet" href="./theme.css">
+    .card {
+      width: 100%;
+      max-width: 600px;
+      padding: 2.75rem 2.25rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(18, 27, 36, 0.85);
+      backdrop-filter: blur(8px);
+    }
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "url": "https://www.iljuchin.com/",
-  "name": "Ilja Iljuchin — Offshore Skipper & Leadership Coach",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Ilja Iljuchin",
-    "url": "https://www.iljuchin.com/",
-    "image": "https://www.iljuchin.com/assets/portrait.jpg",
-    "jobTitle": "Offshore Skipper & Leadership Coach",
-    "description": "Offshore skipper and leadership coach helping founders, executives and sailing crews make clear decisions under pressure.",
-    "knowsAbout": [
-      "Offshore sailing",
-      "Skippering",
-      "Leadership coaching",
-      "Executive coaching",
-      "Team coaching",
-      "Agile coaching",
-      "Leadership"
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/in/iljuchin/",
-      "https://www.facebook.com/ilja.skipper/"
-    ]
-  }
-}
-</script>
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .role {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    p {
+      color: var(--text);
+      opacity: 0.9;
+      margin-bottom: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 0.65rem 1.15rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    a.primary {
+      background: var(--accent);
+      color: #081014;
+    }
+
+    a.primary:hover {
+      opacity: 0.92;
+    }
+
+    a.secondary {
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    a.secondary:hover {
+      border-color: rgba(238, 242, 246, 0.35);
+    }
+
+    footer {
+      margin-top: 1.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-<main>
-
-<section class="hero">
-  <div class="wrap">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="./" aria-current="page">Home</a>
-      <a href="./skipper.html">Skippering</a>
-      <a href="./coach.html">Coaching</a>
-    </nav>
-    <div class="hero-copy">
-      <h1>Ilja Iljuchin <span class="role">Skipper &amp; Coach</span></h1>
-      <p class="tagline">Connecting sailing, sea adventures,<br>and personal development.</p>
-      <a class="cta" href="https://cal.com/ilja-iljuchin/" target="_blank" rel="noopener noreferrer">Book a call</a>
+  <main class="card">
+    <div class="status">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Site Under Refinement</span>
     </div>
-  </div>
-</section>
 
-<section class="wrap intro-block" aria-labelledby="clarity-title">
-  <h2 id="clarity-title">When pressure is high, clarity is what you need most.</h2>
-  <p>Pressure rarely arrives as one big crisis. It builds up: decisions pile up, time to think shrinks, and people look to you for the answer. On a night watch and in a leadership role it works the same way.</p>
-  <div class="detail-grid">
-    <article class="detail-card">
-      <h3>The situation</h3>
-      <p>At sea: tired crew, changing weather and a decision that can't wait. In leadership: a full calendar, a team that depends on you for everything, and rest that no longer restores you.</p>
-    </article>
-    <article class="detail-card">
-      <h3>The problem</h3>
-      <p>You can be highly motivated, strong, and work insanely hard… but effort alone stops working. Without clarity and mental resilience you start reacting instead of deciding, and that is where mistakes and exhaustion begin.</p>
-    </article>
-    <article class="detail-card">
-      <h3>How I work with it</h3>
-      <p>See the situation clearly, choose one concrete next step, and agree how to measure progress. On a boat that means a briefing and a watch system. With leaders it means a solution-focused coaching approach with hands-on, experience-based action steps. True resilience comes from mindful self-development.</p>
-    </article>
-  </div>
-</section>
+    <h1>Ilja Iljuchin</h1>
+    <div class="role">Offshore Skipper &amp; Executive / Agile Team Coach</div>
 
-<div class="wrap content">
-  <section class="bio" id="about">
-    <div class="bio-heading">
-      <div class="portrait"><img src="./assets/portrait.jpg" width="480" height="480" alt="Ilja Iljuchin in offshore sailing gear at the helm at sunset"></div>
-      <h2>At sea and on land.</h2>
-    </div>
-    <p><strong>I help founders, executives, and sailing crews make clear decisions under pressure:</strong> when the stakes are high, time is short, and everyone is looking to you. Since 2005, I’ve led complex teams and coached leaders through change, including at McKinsey &amp; Company.</p>
-    <figure class="sailing-quote">
-      <blockquote>“When a man does not know what harbour he is making for, no wind is the right wind.”</blockquote>
-      <figcaption>— Seneca, Letters to Lucilius</figcaption>
-    </figure>
-  </section>
+    <p>
+      This website is currently being thoughtfully refined in content, structure, and visual design.
+      A complete version is in active preparation on our staging environment.
+    </p>
 
-  <aside id="contact" class="card">
-    <h2>Let’s stay in touch.</h2>
-    <div class="qr-row">
-      <img src="./assets/contact.svg" width="112" height="112" alt="QR code for Ilja Iljuchin’s contact card">
-      <div>
-        <strong>Scan or save my contact</strong>
-        <p>Scan the QR code or <a href="data:text/vcard;charset=utf-8;base64,QkVHSU46VkNBUkQKVkVSU0lPTjozLjAKTjpJbGp1Y2hpbjtJbGphOzs7CkZOOklsamEgSWxqdWNoaW4KT1JHOlNraXBwZXIgJiBDb2FjaAppdGVtMS5VUkw6aHR0cHM6Ly93d3cuaWxqdWNoaW4uY29tCml0ZW0xLlgtQUJMYWJlbDpXZWJzaXRlCml0ZW0yLlVSTDpodHRwczovL2NhbC5jb20vaWxqYS1pbGp1Y2hpbi9xdWljay1jaGF0LTMwLW1pbgppdGVtMi5YLUFCTGFiZWw6Q2FsLmNvbQppdGVtMy5VUkw6aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2lsanVjaGluLwppdGVtMy5YLUFCTGFiZWw6TGlua2VkSW4KaXRlbTQuVVJMOmh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9pbGphLnNraXBwZXIKaXRlbTQuWC1BQkxhYmVsOkZhY2Vib29rCkVORDpWQ0FSRAo=" download="ilja_iljuchin.vcf">download my vCard</a>.</p>
-      </div>
-    </div>
-  </aside>
-</div>
+    <p>
+      If you would like to connect regarding executive or team coaching, leadership development,
+      or offshore skippering and sea-based team experiences in the meantime, feel free to reach out directly.
+    </p>
 
-<div class="wrap experience-pair">
-  <section class="experience" aria-labelledby="offshore-title">
-    <h2 id="offshore-title">Offshore &amp; Sea Leadership</h2>
-    <p class="experience-intro">RYA Yachtmaster Offshore. Long passages, night watches and changing weather call for clear briefings and calm decisions.</p>
-    <dl class="metrics">
-      <div><dt>Total Distance</dt><dd>2,750+ NM</dd></div>
-      <div><dt>Sea Time (~102 Night Hours)</dt><dd>~211 Days</dd></div>
-      <div><dt>Offshore &amp; Racing Boats</dt><dd>35–46 ft</dd></div>
-    </dl>
-    <div class="scope">
-      <p><strong>What this means for you:</strong> a skipper who plans ahead, briefs the crew clearly, and keeps the boat and the people safe, so the trip stays enjoyable and not just a test of endurance.</p>
-      <p>Experienced offshore sailor and skipper handling non-stop passages, night watches, and competitive RS 500 dinghy racing since 2016.</p>
+    <div class="actions">
+      <!-- Replace with your real contact email or booking link -->
+      <a class="btn primary" href="mailto:support@iljuchin.com">Get in Touch</a>
+      <!-- Replace with your real LinkedIn URL if desired -->
+      <a class="btn secondary" href="https://www.linkedin.com/in/iljuchin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
-    <div class="card-footer">
-      <a class="card-link" href="./skipper.html">Skippering details <span aria-hidden="true">&rarr;</span></a>
-    </div>
-  </section>
 
-  <section class="experience coaching" aria-labelledby="coaching-title">
-    <h2 id="coaching-title">Leadership Coaching</h2>
-    <p class="experience-intro">For business owners and C-level leaders facing a career pivot, a leadership plateau, or early signs of burnout.</p>
-    <dl class="metrics">
-      <div><dt>Team Coaching</dt><dd>500+ Hours</dd></div>
-      <div><dt>1:1 Executive Coaching</dt><dd>250+ Hours</dd></div>
-      <div><dt>Leading Complex Teams</dt><dd>20 Years</dd></div>
-    </dl>
-    <div class="scope">
-      <p><strong>What this means for you:</strong> you might recognise this: you're delivering, but decisions feel heavier, the team depends on you for everything, and rest doesn't restore you.</p>
-      <p>You take away a clearer view of what drives and drains you, a concrete next step for the situation in front of you, and a way to measure progress.</p>
-    </div>
-    <div class="card-footer">
-      <a class="card-link" href="./coach.html">Coaching details <span aria-hidden="true">&rarr;</span></a>
-    </div>
-  </section>
-</div>
-
-</main>
-<footer class="wrap">
-  <span>Ilja Iljuchin · Skipper &amp; Coach</span>
-  <nav class="profiles" aria-label="Social profiles">
-    <a href="https://www.linkedin.com/in/iljuchin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://www.facebook.com/ilja.skipper/" target="_blank" rel="noopener noreferrer">Facebook</a>
-  </nav>
-</footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "31d93321d2084221b8469917cc4ae066"}'></script><!-- End Cloudflare Web Analytics -->
+    <footer>
+      &copy; 2026 Ilja Iljuchin. All rights reserved.
+    </footer>
+  </main>
 </body>
 </html>
