@@ -14,7 +14,8 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `theme.css` — Design tokens (`:root` colors) and all layout/component classes.
 - `site.js` — Footer: copyright year and "Last updated" date in the visitor's locale.
 - `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page. Enable per clone with `git config core.hooksPath .githooks`.
-- `assets/` — Images (`portrait.jpg`, `sunset.jpg`, `og-image.jpg`) and `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
+- `404.html` — Not-found page (dark theme).
+- `assets/` — Images (`portrait.jpg` sailing portrait, `headshot.jpg` business portrait used in JSON-LD, `sunset.jpg`, `og-image.jpg` default share image, `og-coach.jpg` share image for Coaching) and `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
 - `contact.vcf` — Downloadable contact card (vCard 3.0).
 - `vercel.json` — `cleanUrls` (pages are served as `/coach`, `/skipper`, …; `.html` URLs redirect) and response headers.
 - `sitemap.xml` & `robots.txt` — Search indexing metadata. `runs.html` is `noindex` and left out of the sitemap until it has real content.
@@ -32,6 +33,21 @@ Every page follows the same skeleton; keep it identical across pages.
 Main call to action per page:
 - `index.html`, `coach.html`, `skipper.html`: "Book a call" (cal.com). Secondary options (CV request, link to the other service) go in `.bridge-alt` under the button. No social links here.
 - `about.html`, `runs.html`: follow on social media (`.social-btn`; LinkedIn is primary on About, Facebook on Runs). The hero button scrolls to `#follow`.
+
+Domain colors (used on cards, credentials, FAQ, Runs entries):
+- Blue (default or `.sea`): at sea — skippering, voyages, workshops on the water.
+- Pink (`.coaching` or `.shore`): on shore — coaching, workshops and training on land.
+
+FAQ (`coach.html`, `skipper.html` only): `.faq` section with `.faq-intro` (1/3) and `.faq-list` (2/3). Each page also carries a `FAQPage` JSON-LD block in `<head>`; whenever a question or answer changes, update both.
+
+`404.html` uses the dark theme (`body.theme-dark`) and absolute paths (`/theme.css`, `/coach`), because Vercel serves it for any missing URL.
+
+## Czech Version (planned)
+Czech is the only other language that will be added.
+- **URLs:** English stays at the root; Czech pages mirror it under `/cs/` with the same slugs (`/cs/`, `/cs/coach`, `/cs/skipper`, `/cs/about`, `/cs/runs`). Files: `cs/index.html`, `cs/coach.html`, …
+- **Markup:** Czech pages use `<html lang="cs">` and `og:locale` `cs_CZ`. `site.js` already formats dates by the page language.
+- **When the first Czech page goes live:** add `<link rel="alternate" hreflang="en|cs|x-default">` to both language versions, add `og:locale:alternate`, add a language switch to `.site-nav`, and list both versions in `sitemap.xml` with `xhtml:link` alternates. Do not add hreflang links before the Czech page exists.
+- Shared assets (`theme.css`, `site.js`, `assets/`, `contact.vcf`) are referenced with absolute paths from Czech pages.
 
 ## Working Rules for Claude Code
 1. **Language:** All site copy, filenames, identifiers, and code comments are in English. A Czech version will be added later.

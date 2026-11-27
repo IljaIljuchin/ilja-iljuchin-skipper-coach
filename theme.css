@@ -11,6 +11,7 @@
   --accent: #3A78B2;
   --soft: #E6C0C6;
   --action: #E26A5C;
+  --night: #12263F;
 
   --hero-img: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d0819216-e46b-4460-8d85-805338a5821c-Wcl4h82j8YWh9R0fQahC6UXVomK5rb.jpg');
   --hero-shade: linear-gradient(90deg, rgba(250,246,240,.98), rgba(250,246,240,.89) 29%, rgba(250,246,240,.54) 44%, transparent 68%);
@@ -137,24 +138,49 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   .qr-row p { max-width: none; }
 }
 
-/* ---------- Experience & detail cards ---------- */
+/* ---------- Domain colors ----------
+   Blue (default, or .sea) = at sea: skippering, voyages, workshops on the water.
+   Pink (.coaching or .shore) = on shore: coaching, workshops and training on land. */
 .experience,
 .detail-card,
-.qual-grid li {
+.qual-grid li,
+.faq,
+.domain-legend .sea {
   --domain: var(--accent);
+  --marker: var(--accent);
   --wash: color-mix(in srgb, var(--accent) 6%, var(--page));
   --line: color-mix(in srgb, var(--domain) 36%, var(--page));
 }
-.experience.coaching,
-.detail-card.coaching,
-.qual-grid li.coaching {
+:is(.experience, .detail-card, .qual-grid li, .faq).coaching,
+:is(.experience, .detail-card, .qual-grid li, .faq).shore,
+.domain-legend .shore {
   --domain: var(--soft);
+  --marker: var(--action);
   --wash: color-mix(in srgb, var(--soft) 15%, var(--card));
   --line: var(--soft);
 }
 @supports not (background: color-mix(in srgb, red, blue)) {
-  .experience, .detail-card, .qual-grid li { --wash: #F3F7FA; --line: #B8CEE3; }
-  .experience.coaching, .detail-card.coaching, .qual-grid li.coaching { --wash: #F7EEEA; --line: #E6C0C6; }
+  .experience, .detail-card, .qual-grid li, .faq { --wash: #F3F7FA; --line: #B8CEE3; }
+  :is(.experience, .detail-card, .qual-grid li, .faq):is(.coaching, .shore) { --wash: #F7EEEA; --line: #E6C0C6; }
+}
+.domain-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+.domain-legend li { display: inline-flex; align-items: center; gap: 8px; }
+.domain-legend li::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--domain);
 }
 
 .experience-pair {
@@ -241,10 +267,22 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   object-fit: cover;
 }
 
-/* ---------- FAQ ---------- */
-.faq { padding-bottom: 48px; }
-.faq details { border-bottom: 1px solid var(--soft); padding: 16px 0; max-width: 56rem; }
-.faq details:first-of-type { border-top: 1px solid var(--soft); }
+/* ---------- FAQ: intro (1/3) + questions (2/3), colored by domain ---------- */
+.faq {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 24px clamp(24px, 3vw, 48px);
+  padding-bottom: 48px;
+}
+.faq-intro { position: sticky; top: 24px; }
+.faq-intro h2 { margin: 0 0 12px; }
+.faq-intro p { font-size: 15px; line-height: 1.6; margin: 0; }
+.faq-intro a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.faq-intro a:hover { color: var(--accent); }
+.faq-list { border-top: 3px solid var(--domain); }
+.faq details { border-bottom: 1px solid var(--line); padding: 16px 14px; }
+.faq details[open] { background: var(--wash); }
 .faq summary {
   cursor: pointer;
   list-style: none;
@@ -255,7 +293,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   gap: 16px;
 }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: '+'; flex: none; color: var(--action); font-size: 22px; line-height: 1; }
+.faq summary::after { content: '+'; flex: none; color: var(--marker); font-size: 22px; line-height: 1; }
 .faq details[open] summary::after { content: '–'; }
 .faq summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .faq details p { font-size: 15px; line-height: 1.7; margin: 12px 0 0; max-width: 46rem; }
@@ -364,6 +402,38 @@ footer {
   font-size: 12px;
 }
 
+/* ---------- Dark theme (404 page) ---------- */
+.theme-dark {
+  color-scheme: dark;
+  --page: var(--night);
+  --card: #234B78;
+  --ink: #FAF6F0;
+  --soft: #3A78B2;
+  --heading: #E6C0C6;
+}
+.theme-dark h1, .theme-dark h2 { color: var(--heading); }
+.theme-dark .site-nav a { color: var(--ink); }
+.theme-dark .cta { color: #FFFFFF; }
+.theme-dark .site-nav a:hover { border-bottom-color: var(--heading); }
+.lost {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px clamp(24px, 3vw, 48px);
+  min-height: 60vh;
+  padding: 56px 0;
+}
+.lost h1 { margin: 0 0 8px; }
+.lost .role { color: var(--action); }
+.lost p { font-size: 17px; line-height: 1.7; margin: 0 0 12px; max-width: 46ch; }
+.lost p[lang="cs"] { font-size: 15px; opacity: .8; }
+.lost-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 12px; }
+.lost-links .card-link { background: var(--card); border-color: var(--soft); color: var(--ink); }
+.lost-compass { justify-self: center; width: min(100%, 240px); color: var(--soft); }
+.lost-compass .compass-light { fill: var(--ink); opacity: .35; }
+.lost-compass .compass-needle { fill: none; stroke: var(--action); }
+.lost-compass .compass-hub { fill: var(--action); }
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
@@ -373,6 +443,10 @@ footer {
   .detail-grid, .detail-grid-2 { grid-template-columns: 1fr; }
   .qual-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bridge-cols { grid-template-columns: minmax(0, 1fr); }
+  .faq { grid-template-columns: minmax(0, 1fr); }
+  .faq-intro { position: static; }
+  .lost { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .lost-compass { display: none; }
 }
 @media (max-width: 800px) {
   .content { grid-template-columns: minmax(0, 1fr); }
