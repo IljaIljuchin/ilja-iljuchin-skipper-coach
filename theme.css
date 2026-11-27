@@ -278,14 +278,30 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   gap: 24px clamp(24px, 3vw, 48px);
 }
 .bridge-main { display: grid; justify-items: start; gap: 8px; }
-.bridge-more {
-  margin-top: 8px;
-  font-size: 14px;
+.page-bridge .bridge-more { font-size: 14px; }
+.bridge-actions + .bridge-more { margin-top: 8px; }
+.bridge-more a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.bridge-more a:hover { color: var(--accent); }
+
+/* Social follow buttons: equal size; .is-primary marks the page's preferred network. */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 170px;
+  padding: 12px 20px;
+  background: var(--page);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 16px;
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
-.bridge-more:hover { color: var(--accent); }
+.social-btn svg { flex: none; width: 20px; height: 20px; fill: currentColor; }
+.social-btn:hover { border-color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.social-btn.is-primary { background: var(--accent); color: var(--page); }
+.social-btn.is-primary:hover { background: var(--ink); border-color: var(--ink); }
 .bridge-side {
   display: grid;
   justify-items: start;
@@ -334,9 +350,6 @@ footer {
   border-top: 1px solid var(--soft);
   font-size: 12px;
 }
-.profiles { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; }
-.profiles a { padding: 6px 0; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
-.profiles a:hover { color: var(--accent); }
 
 /* ==========================================================================
    Responsive

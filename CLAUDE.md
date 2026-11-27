@@ -14,6 +14,9 @@ Personal portfolio and service website combining **Skipper & Coach** positioning
 - `theme.css` — Shared visual design system, typography, spacing, and layout rules.
 - `assets/` — Visual and contact assets (`portrait.jpg`, `sunset.jpg`, `contact.svg`, etc.).
 - `sitemap.xml` & `robots.txt` — Search indexing and routing metadata.
+- `site.js` — Footer script: copyright year and "Last updated" time in the visitor's locale.
+- `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page. Enable per clone with `git config core.hooksPath .githooks`.
+- `assets/contact.svg` — QR code pointing to `https://www.iljuchin.com/contact.vcf`.
 
 ## Working Rules for Claude Code
 1. **Language & localization:** We are currently tuning the website completely in English. All artifact names, filenames, identifiers, and code comments must be written strictly in English; machine translation of the site content into Czech will be handled later.
