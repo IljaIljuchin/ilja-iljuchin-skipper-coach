@@ -45,7 +45,14 @@
     "name": "Ilja Iljuchin",
     "url": "https://www.iljuchin.com/",
     "image": "https://www.iljuchin.com/assets/headshot.jpg",
-    "homeLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Prague", "addressCountry": "CZ"}},
+    "homeLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prague",
+        "addressCountry": "CZ"
+      }
+    },
     "jobTitle": "Offshore Skipper & Leadership Coach",
     "description": "Offshore skipper and leadership coach helping founders, executives and sailing crews make clear decisions under pressure.",
     "knowsAbout": [
@@ -61,9 +68,123 @@
     ],
     "sameAs": [
       "https://www.linkedin.com/in/iljuchin/",
-      "https://www.facebook.com/ilja.skipper/"
+      "https://www.facebook.com/ilja.skipper/",
+      "https://cal.com/ilja-iljuchin"
+    ],
+    "honorificPrefix": "Ing.",
+    "knowsLanguage": [
+      "en",
+      "cs"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "RYA / MCA Yachtmaster Offshore",
+        "credentialCategory": "certificate",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Royal Yachting Association"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ICAgile Certified Professional in Agile Coaching (ICP-ACC)",
+        "credentialCategory": "certificate",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "ICAgile"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Professional Scrum Master I (PSM I)",
+        "credentialCategory": "certificate",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Scrum.org"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Professional Scrum Product Owner (PSPO)",
+        "credentialCategory": "certificate",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Scrum.org"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Professional Agile Leadership (PAL)",
+        "credentialCategory": "certificate",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Scrum.org"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ICF Coaching & Team Coaching training, QED Group",
+        "credentialCategory": "certificate"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Emotional Skills and Competencies (ESaC) and Evaluating Truthfulness and Credibility (ETaC), Paul Ekman training",
+        "credentialCategory": "certificate"
+      }
     ]
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.iljuchin.com/#website",
+  "url": "https://www.iljuchin.com/",
+  "name": "Ilja Iljuchin — Skipper & Coach",
+  "inLanguage": "en",
+  "publisher": {
+    "@id": "https://www.iljuchin.com/#person"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.iljuchin.com/#business",
+  "name": "Ing. Ilja Iljuchin",
+  "alternateName": "Ilja Iljuchin — Skipper & Coach",
+  "url": "https://www.iljuchin.com/",
+  "image": "https://www.iljuchin.com/assets/headshot.jpg",
+  "founder": {
+    "@id": "https://www.iljuchin.com/#person"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "IČO",
+    "value": "88162541"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Prague",
+    "addressCountry": "CZ"
+  },
+  "areaServed": [
+    "Prague",
+    "Czech Republic",
+    "Online"
+  ],
+  "knowsLanguage": [
+    "en",
+    "cs"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/iljuchin/",
+    "https://www.facebook.com/ilja.skipper/",
+    "https://cal.com/ilja-iljuchin"
+  ]
 }
 </script>
 </head>
@@ -76,13 +197,13 @@
       <a href="/" aria-current="page">Home</a>
       <a href="/coach">Coaching</a>
       <a href="/skipper">Skippering</a>
-      <a href="/runs">Runs</a>
+      <a href="/runs" data-preview-only>Runs</a>
       <a href="/about">About</a>
     </nav>
     <div class="hero-copy">
       <h1>Ilja Iljuchin <span class="role">Skipper &amp; Coach</span></h1>
       <p class="tagline">Connecting sailing, sea adventures,<br>and personal development.</p>
-      <a class="cta" href="https://cal.com/ilja-iljuchin/quick-chat-30-min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <a class="cta" href="https://cal.com/ilja-iljuchin/quick-chat-30-min" target="_blank" rel="noopener noreferrer">Book a call<span class="visually-hidden"> (opens in a new tab)</span></a>
     </div>
   </div>
 </section>
@@ -135,12 +256,12 @@
   <div class="bridge-cols">
     <div class="bridge-main">
       <h2 id="bridge-title">Ready to talk?</h2>
-      <p>Facing a leadership decision or planning an offshore passage? Book a 30-minute call and tell me what you are working on.</p>
+      <p>Have a question, want to know more first, or ready to start? Book a 30-minute call and we will take it from there.</p>
       <div class="bridge-actions">
-        <a class="cta" href="https://cal.com/ilja-iljuchin/quick-chat-30-min" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a class="cta" href="https://cal.com/ilja-iljuchin/quick-chat-30-min" target="_blank" rel="noopener noreferrer">Book a call<span class="visually-hidden"> (opens in a new tab)</span></a>
       </div>
     </div>
-    <aside class="card bridge-side" aria-labelledby="contact-title">
+    <aside class="bridge-side" aria-labelledby="contact-title">
       <h3 id="contact-title">Prefer to reach me directly?</h3>
       <div class="qr-row">
         <img src="./assets/contact.svg" width="112" height="112" alt="QR code linking to Ilja Iljuchin's contact card (vCard)">
@@ -153,8 +274,8 @@
 
 </main>
 <footer class="wrap">
-  <span>&copy; <span data-year>2026</span> Ilja Iljuchin · Skipper &amp; Coach</span>
-  <span>Last updated: <time class="last-updated" datetime="2026-11-27T18:40:25Z">27 November 2026</time></span>
+  <span>&copy; <span data-year>2026</span> Ing. Ilja Iljuchin · Skipper &amp; Coach · IČO 88162541</span>
+  <span>Last updated: <time class="last-updated" datetime="2026-11-27T19:17:32Z">27 November 2026</time></span>
 </footer>
 <script src="./site.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "31d93321d2084221b8469917cc4ae066"}'></script><!-- End Cloudflare Web Analytics -->

@@ -12,8 +12,8 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `runs.html` — Voyages, workshops and expeditions: planned, underway (hidden section until needed), and logbook.
 - `about.html` — Background, story, and credentials.
 - `theme.css` — Design tokens (`:root` colors) and all layout/component classes.
-- `site.js` — Footer: copyright year and "Last updated" date in the visitor's locale.
-- `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page. Enable per clone with `git config core.hooksPath .githooks`.
+- `site.js` — Marks preview hosts (`.is-preview`), footer copyright year, and "Last updated" date in the page's locale.
+- `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`. Enable per clone with `git config core.hooksPath .githooks`.
 - `404.html` — Not-found page (dark theme).
 - `assets/` — Images (`portrait.jpg` sailing portrait, `headshot.jpg` business portrait used in JSON-LD, `sunset.jpg`, `og-image.jpg` default share image, `og-coach.jpg` share image for Coaching) and `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
 - `contact.vcf` — Downloadable contact card (vCard 3.0).
@@ -24,21 +24,29 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 
 ## Page Structure
 Every page follows the same skeleton; keep it identical across pages.
-1. `<head>`: title, description, canonical, Open Graph/Twitter tags, favicons, `theme.css`.
+1. `<head>`: title `Ilja Iljuchin — <Page>` (same text in `og:title` and `twitter:title`), description, canonical, Open Graph/Twitter tags, favicons, `theme.css`.
 2. Hero (`.hero`): primary navigation (`.site-nav`, same links on every page, `aria-current` on the active one), `h1` with `.role`, `.tagline`, and exactly one `.cta`.
-3. Content sections (`.subpage-section`, cards in `.detail-grid`).
+3. Content sections (`.subpage-section`). Items in `.detail-grid` are flat `.detail-card`s with a thin domain line; How sections use numbered `.steps`.
 4. Bottom section (`.page-bridge` > `.bridge-cols`): main call to action on the left (2/3), the shared "Prefer to reach me directly?" QR card (`.bridge-side`) on the right (1/3).
-5. Footer: copyright on the left, "Last updated" date on the right; then `site.js` and the Cloudflare analytics script.
+5. Footer: copyright with business name and IČO (`Ing. Ilja Iljuchin · Skipper & Coach · IČO 88162541`) on the left, "Last updated" date on the right; then `site.js` and the Cloudflare analytics script.
 
 Main call to action per page:
 - `index.html`, `coach.html`, `skipper.html`: "Book a call" (cal.com). Secondary options (CV request, link to the other service) go in `.bridge-alt` under the button. No social links here.
 - `about.html`, `runs.html`: follow on social media (`.social-btn`; LinkedIn is primary on About, Facebook on Runs). The hero button scrolls to `#follow`.
 
+Visual restraint: boxes (background + border) are reserved for highlights only — the two worlds on Home (`.experience`) and the bottom call-to-action section (`.page-bridge`). Everything else uses thin domain-colored lines. Do not introduce new card styles.
+
 Domain colors (used on cards, credentials, FAQ, Runs entries):
 - Blue (default or `.sea`): at sea — skippering, voyages, workshops on the water.
 - Pink (`.coaching` or `.shore`): on shore — coaching, workshops and training on land.
 
-FAQ (`coach.html`, `skipper.html` only): `.faq` section with `.faq-intro` (1/3) and `.faq-list` (2/3). Each page also carries a `FAQPage` JSON-LD block in `<head>`; whenever a question or answer changes, update both.
+FAQ (`coach.html`, `skipper.html` only): `.faq` section with `.faq-intro` (heading only, 1/3) and `.faq-list` (2/3). Each page also carries a `FAQPage` JSON-LD block in `<head>`; whenever a question or answer changes, update both.
+
+Structured data (JSON-LD): `index.html` holds the full `Person` (`@id` `https://www.iljuchin.com/#person`, credentials, languages, profiles), `WebSite`, and `ProfessionalService` (OSVČ, IČO 88162541, Prague). Other pages reference the person by `@id` and add `Service`, `FAQPage`, `AboutPage`, and `BreadcrumbList`. Keep credentials in sync with the About page.
+
+Runs is work in progress: its nav link has `data-preview-only` (hidden unless `site.js` detects a non-production host) and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish Runs, remove both, drop its `noindex`, and add it to `sitemap.xml`.
+
+Security: `vercel.json` sets a Content-Security-Policy. No inline scripts (JSON-LD data blocks are fine) and no inline styles; new external hosts must be added to the policy.
 
 `404.html` uses the dark theme (`body.theme-dark`) and absolute paths (`/theme.css`, `/coach`), because Vercel serves it for any missing URL.
 

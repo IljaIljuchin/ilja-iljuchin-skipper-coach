@@ -1,12 +1,23 @@
 #!/bin/sh
-# Stamp the footer "Last updated" date on every staged HTML page.
+# For every staged HTML page: stamp the footer "Last updated" date and
+# update that page's <lastmod> in sitemap.xml.
 # Enable once per clone with: git config core.hooksPath .githooks
 now_iso=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 now_text=$(LC_ALL=C date -u "+%-d %B %Y")
+today=$(date -u +%Y-%m-%d)
 
 git diff --cached --name-only --diff-filter=AM -- '*.html' | while IFS= read -r file; do
   STAMP_ISO="$now_iso" STAMP_TEXT="$now_text" perl -pi -e \
     's{<time class="last-updated" datetime="[^"]*">[^<]*</time>}{<time class="last-updated" datetime="$ENV{STAMP_ISO}">$ENV{STAMP_TEXT}</time>}g' \
     "$file"
   git add "$file"
+
+  # index.html -> /, coach.html -> /coach, cs/coach.html -> /cs/coach
+  path="/${file%.html}"
+  path="${path%index}"
+  if [ -f sitemap.xml ] && grep -q "<loc>https://www.iljuchin.com${path}</loc>" sitemap.xml; then
+    LOC="https://www.iljuchin.com${path}" TODAY="$today" perl -0pi -e \
+      's{(<loc>\Q$ENV{LOC}\E</loc>\s*<lastmod>)[^<]*}{$1$ENV{TODAY}}' sitemap.xml
+    git add sitemap.xml
+  fi
 done
