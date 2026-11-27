@@ -247,6 +247,9 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .band > .subpage-section { padding: var(--section-gap) 0; }
 .band h2 { color: var(--action); }
 .band .lead { max-width: none; }
+.band-center { text-align: center; }
+.band-center .lead { max-width: 46rem; margin-inline: auto; }
+.habit-arrow { display: inline-block; margin: 0 .3em; color: var(--soft); font-family: Arial, Helvetica, sans-serif; font-size: .7em; vertical-align: .12em; }
 .band .detail-card { --domain: var(--accent); --marker: var(--card); }
 .band .detail-card h3 { color: var(--soft); }
 .band .detail-card.step h3::before { color: var(--page); font-size: 22px; letter-spacing: .02em; }
