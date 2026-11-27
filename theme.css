@@ -322,6 +322,8 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .faq details[open] summary::after { content: '–'; }
 .faq summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .faq details p { font-size: 15px; line-height: 1.7; margin: 12px 0 0; max-width: 46rem; }
+.faq details a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.faq details a:hover { color: var(--accent); }
 
 .page-bridge {
   padding: clamp(22px, 2.5vw, 32px);
