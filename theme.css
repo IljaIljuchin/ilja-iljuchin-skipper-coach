@@ -240,6 +240,13 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .band .lead { max-width: none; }
 .band .detail-card { --domain: var(--accent); --marker: var(--card); }
 .band .detail-card h3 { color: var(--soft); }
+.band .detail-card.step h3::before { color: var(--page); font-size: 22px; letter-spacing: .02em; }
+
+/* A band used only as a labelled stripe that opens a separate part of a page. */
+.band-strip > .wrap { padding: 28px 0; }
+.band-strip .part-label { color: var(--action); }
+.band-strip p:not(.part-label) { margin: 0; font-size: 17px; line-height: 1.6; max-width: 46rem; }
+.band-strip + .content { padding-top: var(--section-gap); }
 .subpage-section h2 { margin: 0 0 20px; }
 .lead { font-size: 18px; line-height: 1.7; max-width: 46rem; margin: 0 0 14px; }
 
@@ -250,6 +257,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   margin-bottom: 44px;
 }
 .detail-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 28px; }
+.detail-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .detail-card { padding: 2px 0 2px 20px; border-left: 3px solid var(--domain); }
 .detail-card h3 {
   font: 700 19px/1.35 Arial, Helvetica, sans-serif;
@@ -451,10 +459,13 @@ footer {
 /* ==========================================================================
    Responsive
    ========================================================================== */
+@media (max-width: 1100px) {
+  .detail-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
   .experience-pair { grid-template-columns: 1fr; }
   .experience { grid-row: auto; grid-template-rows: auto; }
-  .detail-grid, .detail-grid-2 { grid-template-columns: 1fr; }
+  .detail-grid, .detail-grid-2, .detail-grid-4 { grid-template-columns: 1fr; }
   .qual-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bridge-cols { grid-template-columns: minmax(0, 1fr); }
   .faq { grid-template-columns: minmax(0, 1fr); }
