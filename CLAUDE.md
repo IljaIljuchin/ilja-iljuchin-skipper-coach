@@ -48,6 +48,8 @@ Structured data (JSON-LD): `index.html` holds the full `Person` (`@id` `https://
 
 Runs is work in progress: its nav link has `data-preview-only` (hidden unless `site.js` detects a non-production host) and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish Runs, remove both, drop its `noindex`, and add it to `sitemap.xml`.
 
+Caching: only `/assets/img/` and `/assets/docs/` get a 7-day cache; CSS and JS are revalidated on every load, so style changes show up immediately.
+
 Security: `vercel.json` sets a Content-Security-Policy. No inline scripts (JSON-LD data blocks are fine) and no inline styles; new external hosts must be added to the policy.
 
 `404.html` uses the dark theme (`body.theme-dark`) and absolute paths (`/assets/css/theme.css`, `/coach`), because Vercel serves it for any missing URL.
