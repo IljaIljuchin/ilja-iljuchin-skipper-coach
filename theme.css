@@ -12,6 +12,7 @@
   --soft: #E6C0C6;
   --action: #E26A5C;
   --night: #12263F;
+  --section-gap: 56px;
 
   --hero-img: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d0819216-e46b-4460-8d85-805338a5821c-Wcl4h82j8YWh9R0fQahC6UXVomK5rb.jpg');
   --hero-shade: linear-gradient(90deg, rgba(250,246,240,.98), rgba(250,246,240,.89) 29%, rgba(250,246,240,.54) 44%, transparent 68%);
@@ -113,7 +114,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   grid-template-columns: minmax(0, 1.55fr) minmax(260px, 340px);
   align-items: start;
   gap: clamp(28px, 4vw, 64px);
-  padding: 53px 0 64px;
+  padding: var(--section-gap) 0;
 }
 .bio h2 { margin: 0 0 18px; }
 .portrait {
@@ -125,7 +126,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .bio p { font-size: 15px; line-height: 1.75; margin: 0 0 13px; }
-.sailing-quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--soft); }
+.sailing-quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--accent); }
 .sailing-quote blockquote { margin: 0; font: italic 22px/1.4 Georgia, 'Times New Roman', serif; letter-spacing: -.01em; }
 .sailing-quote figcaption { margin-top: 8px; font-size: 14px; opacity: .8; }
 
@@ -179,7 +180,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-bottom: 56px;
 }
 .experience {
   display: grid;
@@ -204,7 +204,15 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   font-size: 15px;
   line-height: 1.6;
 }
-.card-footer { align-self: end; padding-top: 4px; }
+.card-lists { display: grid; align-content: start; gap: 16px; }
+.list-label { padding-top: 16px; border-top: 2px solid var(--domain); font-size: 14px; font-weight: 700; }
+
+/* Labelled divider that splits a page into two clearly separate offers. */
+.part-divider { margin-top: var(--section-gap); padding-top: 20px; border-top: 3px solid var(--accent); }
+.part-label { margin: 0 0 6px; color: var(--accent); font: 700 14px/1.3 Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.part-divider p:not(.part-label) { margin: 0; font-size: 17px; line-height: 1.6; max-width: 46rem; }
+.part-divider + .subpage-section, .part-divider + .content { padding-top: 32px; }
+.card-footer { align-self: end; display: flex; flex-wrap: wrap; gap: 10px 12px; padding-top: 4px; }
 .card-link {
   display: inline-flex;
   align-items: center;
@@ -220,15 +228,18 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .card-link:hover { border-color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- Subpage sections ---------- */
-.subpage-section { padding: 48px 0 0; }
+.subpage-section { padding: var(--section-gap) 0 0; }
+.subpage-section > :last-child { margin-bottom: 0; }
 .content + .subpage-section { padding-top: 0; }
-.subhead { margin: 12px 0 20px; font-size: clamp(26px, 2.4vw, 34px); }
 
-/* Inverted band that breaks up a long page (e.g. "What we do" on Coach). */
-.band { margin-top: 48px; background: var(--ink); color: var(--card); }
-.band > .subpage-section { padding: 56px 0 20px; }
-.band h2 { color: var(--soft); }
-.band .detail-card { --domain: var(--soft); --marker: var(--soft); }
+/* Inverted band that breaks up a long page (e.g. "What we do" on Coach).
+   Heading coral, step titles pink, step numbers lightest. */
+.band { margin-top: var(--section-gap); background: var(--night); color: var(--card); }
+.band > .subpage-section { padding: var(--section-gap) 0; }
+.band h2 { color: var(--action); }
+.band .lead { max-width: none; }
+.band .detail-card { --domain: var(--accent); --marker: var(--card); }
+.band .detail-card h3 { color: var(--soft); }
 .subpage-section h2 { margin: 0 0 20px; }
 .lead { font-size: 18px; line-height: 1.7; max-width: 46rem; margin: 0 0 14px; }
 
@@ -255,9 +266,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .detail-card .card-eyebrow { margin: 0 0 6px; text-transform: uppercase; }
 .detail-card .example { margin-top: 10px; font-size: 14px; opacity: .85; }
 
-.credentials { margin: -16px 0 0; font-size: 14px; line-height: 1.6; }
-.credentials a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.credentials a:hover { color: var(--accent); }
+
 
 /* Numbered steps (How sections): a top line and a step number instead of a side line. */
 .steps { counter-reset: step; }
@@ -286,7 +295,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   align-items: start;
   gap: 24px clamp(24px, 3vw, 48px);
-  padding-bottom: 48px;
 }
 .faq-intro { position: sticky; top: 24px; }
 .faq-intro h2 { margin: 0; }
@@ -309,7 +317,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 
 .page-bridge {
   padding: clamp(22px, 2.5vw, 32px);
-  margin: 0 auto 48px;
+  margin: var(--section-gap) auto var(--section-gap);
   background: var(--card);
   border: 1px solid var(--soft);
   border-radius: 9px;
