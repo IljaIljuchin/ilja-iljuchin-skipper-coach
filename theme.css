@@ -197,6 +197,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   padding-left: 20px;
   display: grid;
   gap: 10px;
+  align-content: start;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -235,6 +236,29 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   margin-bottom: 8px;
 }
 .detail-card p { font-size: 15px; line-height: 1.65; margin: 0; }
+.detail-card .card-eyebrow,
+.detail-card.step h3::before {
+  color: var(--marker);
+  font: 700 13px/1.4 Arial, Helvetica, sans-serif;
+  letter-spacing: .08em;
+}
+.detail-card .card-eyebrow { margin: 0 0 6px; text-transform: uppercase; }
+.detail-card .example { margin-top: 10px; font-size: 14px; opacity: .85; }
+
+/* Call to action inside the page, right where the reader recognises their situation. */
+.inline-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin: 0 0 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--soft);
+}
+.inline-cta p { margin: 0; font-size: 18px; line-height: 1.5; max-width: 40rem; }
+.credentials { margin: -16px 0 0; font-size: 14px; line-height: 1.6; }
+.credentials a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.credentials a:hover { color: var(--accent); }
 
 /* Numbered steps (How sections): a top line and a step number instead of a side line. */
 .steps { counter-reset: step; }
@@ -243,9 +267,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   content: counter(step, decimal-leading-zero);
   display: block;
   margin-bottom: 6px;
-  color: var(--marker);
-  font-size: 13px;
-  letter-spacing: .08em;
 }
 
 
