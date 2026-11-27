@@ -13,6 +13,9 @@
   --action: #E26A5C;
   --night: #12263F;
   --section-gap: 56px;
+  --text-s: 14px;
+  --text-m: 16px;
+  --text-l: 18px;
 
   --hero-img: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d0819216-e46b-4460-8d85-805338a5821c-Wcl4h82j8YWh9R0fQahC6UXVomK5rb.jpg');
   --hero-shade: linear-gradient(90deg, rgba(250,246,240,.98), rgba(250,246,240,.89) 29%, rgba(250,246,240,.54) 44%, transparent 68%);
@@ -29,6 +32,17 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 10;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--page);
+  font-weight: 700;
+}
+.skip-link:focus { top: 12px; }
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -65,7 +79,7 @@ h2 { font-size: clamp(36px, 3.4vw, 55px); margin: 12px 0 18px; }
   font-size: 14px;
   font-weight: 700;
   color: var(--ink);
-  opacity: .72;
+  opacity: .88;
   border-bottom: 2px solid transparent;
   transition: opacity .15s ease, border-color .15s ease;
 }
@@ -94,7 +108,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   font: italic clamp(36px, 4.2vw, 67px)/1.18 Georgia, serif;
   letter-spacing: -.045em;
 }
-.tagline { font-size: 16px; line-height: 1.65; margin: 19px 0 24px; }
+.tagline { font-size: var(--text-m); line-height: 1.65; margin: 19px 0 24px; }
 .cta {
   display: flex;
   align-items: center;
@@ -125,10 +139,10 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   border-radius: 50%;
 }
 .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.bio p { font-size: 15px; line-height: 1.75; margin: 0 0 13px; }
-.sailing-quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--accent); }
-.sailing-quote blockquote { margin: 0; font: italic 22px/1.4 Georgia, 'Times New Roman', serif; letter-spacing: -.01em; }
-.sailing-quote figcaption { margin-top: 8px; font-size: 14px; opacity: .8; }
+.bio p { font-size: var(--text-l); line-height: 1.75; margin: 0 0 13px; }
+.quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--accent); }
+.quote blockquote { margin: 0; font: italic 22px/1.4 Georgia, 'Times New Roman', serif; letter-spacing: -.01em; }
+.quote figcaption { margin-top: 8px; font-size: var(--text-s); opacity: .8; }
 
 
 /* ---------- Domain colors ----------
@@ -194,23 +208,23 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   text-align: left;
 }
 .experience h2 { font-size: clamp(28px, 2.5vw, 40px); margin: 0; text-wrap: balance; }
-.experience p { font-size: 15px; line-height: 1.6; margin: 0; }
+.experience p { font-size: var(--text-m); line-height: 1.6; margin: 0; }
 .bullet-list {
   margin: 0;
   padding-left: 20px;
   display: grid;
   gap: 10px;
   align-content: start;
-  font-size: 15px;
+  font-size: var(--text-m);
   line-height: 1.6;
 }
 .card-lists { display: grid; align-content: start; gap: 16px; }
-.list-label { padding-top: 16px; border-top: 2px solid var(--domain); font-size: 14px; font-weight: 700; }
+.list-label { padding-top: 16px; border-top: 2px solid var(--domain); font-size: var(--text-s); font-weight: 700; }
 
 /* Labelled divider that splits a page into two clearly separate offers. */
 .part-divider { margin-top: var(--section-gap); padding-top: 20px; border-top: 3px solid var(--accent); }
 .part-label { margin: 0 0 6px; color: var(--accent); font: 700 14px/1.3 Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.part-divider p:not(.part-label) { margin: 0; font-size: 17px; line-height: 1.6; max-width: 46rem; }
+.part-divider p:not(.part-label) { margin: 0; font-size: var(--text-l); line-height: 1.6; max-width: 46rem; }
 .part-divider + .subpage-section, .part-divider + .content { padding-top: 32px; }
 .card-footer { align-self: end; display: flex; flex-wrap: wrap; gap: 10px 12px; padding-top: 4px; }
 .card-link {
@@ -238,6 +252,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .band > .subpage-section { padding: var(--section-gap) 0; }
 .band h2 { color: var(--action); }
 .band .lead { max-width: none; }
+.band-note { margin: 28px 0 0; font-size: var(--text-s); opacity: .85; }
 .band .detail-card { --domain: var(--accent); --marker: var(--card); }
 .band .detail-card h3 { color: var(--soft); }
 .band .detail-card.step h3::before { color: var(--page); font-size: 22px; letter-spacing: .02em; }
@@ -245,10 +260,10 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 /* A band used only as a labelled stripe that opens a separate part of a page. */
 .band-strip > .wrap { padding: 28px 0; }
 .band-strip .part-label { color: var(--action); }
-.band-strip p:not(.part-label) { margin: 0; font-size: 17px; line-height: 1.6; max-width: 46rem; }
+.band-strip p:not(.part-label) { margin: 0; font-size: var(--text-l); line-height: 1.6; max-width: 46rem; }
 .band-strip + .content { padding-top: var(--section-gap); }
 .subpage-section h2 { margin: 0 0 20px; }
-.lead { font-size: 18px; line-height: 1.7; max-width: 46rem; margin: 0 0 14px; }
+.lead { font-size: var(--text-l); line-height: 1.7; max-width: 46rem; margin: 0 0 14px; }
 
 .detail-grid {
   display: grid;
@@ -264,7 +279,8 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   letter-spacing: -.015em;
   margin-bottom: 8px;
 }
-.detail-card p { font-size: 15px; line-height: 1.65; margin: 0; }
+.detail-card p a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.detail-card p { font-size: var(--text-m); line-height: 1.65; margin: 0; }
 .detail-card .card-eyebrow,
 .detail-card.step h3::before {
   color: var(--marker);
@@ -272,7 +288,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   letter-spacing: .08em;
 }
 .detail-card .card-eyebrow { margin: 0 0 6px; text-transform: uppercase; }
-.detail-card .example { margin-top: 10px; font-size: 14px; opacity: .85; }
+.detail-card .example { margin-top: 10px; font-size: var(--text-s); opacity: .85; }
 
 
 
@@ -311,7 +327,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .faq summary {
   cursor: pointer;
   list-style: none;
-  font-size: 17px;
+  font-size: var(--text-l);
   font-weight: 700;
   display: flex;
   justify-content: space-between;
@@ -321,7 +337,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .faq summary::after { content: '+'; flex: none; color: var(--marker); font-size: 22px; line-height: 1; }
 .faq details[open] summary::after { content: '–'; }
 .faq summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
-.faq details p { font-size: 15px; line-height: 1.7; margin: 12px 0 0; max-width: 46rem; }
+.faq details p { font-size: var(--text-m); line-height: 1.7; margin: 12px 0 0; max-width: 46rem; }
 .faq details a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .faq details a:hover { color: var(--accent); }
 
@@ -333,7 +349,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   border-radius: 9px;
 }
 .page-bridge h2 { font-size: clamp(26px, 2.4vw, 36px); margin: 0 0 8px; }
-.page-bridge p { font-size: 15px; line-height: 1.6; margin: 0; max-width: 56ch; }
+.page-bridge p { font-size: var(--text-m); line-height: 1.6; margin: 0; max-width: 56ch; }
 .bridge-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 8px; }
 /* Same layout on every subpage: main call to action (2/3) + secondary card (1/3). */
 .bridge-cols {
@@ -352,7 +368,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   margin: 12px 0 0;
   padding-top: 14px;
   border-top: 1px solid var(--soft);
-  font-size: 14px;
+  font-size: var(--text-s);
   line-height: 1.5;
 }
 .bridge-alt dt { color: var(--ink); opacity: .72; }
@@ -387,7 +403,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   border-left: 1px solid var(--soft);
 }
 .bridge-side h3 { font: 700 19px/1.35 Arial, Helvetica, sans-serif; letter-spacing: -.015em; }
-.bridge-side p { font-size: 14px; line-height: 1.55; }
+.bridge-side p { font-size: var(--text-s); line-height: 1.55; }
 .bridge-side .card-link { background: var(--page); border-color: var(--soft); }
 .qr-row { display: flex; align-items: center; gap: 18px; }
 .qr-row img { flex: none; width: 112px; height: 112px; border-radius: 8px; }
@@ -411,7 +427,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 .qual-grid li { padding: 2px 0 2px 18px; border-left: 3px solid var(--domain); }
 .qual-grid h3 { font: 700 18px/1.35 Arial, Helvetica, sans-serif; letter-spacing: -.015em; }
-.qual-grid p { font-size: 15px; line-height: 1.55; margin: 5px 0 0; }
+.qual-grid p { font-size: var(--text-m); line-height: 1.55; margin: 5px 0 0; }
 .qual-grid time { white-space: nowrap; }
 
 /* ---------- Footer ---------- */
@@ -449,8 +465,8 @@ footer {
 }
 .lost h1 { margin: 0 0 8px; }
 .lost .role { color: var(--action); }
-.lost p { font-size: 17px; line-height: 1.7; margin: 0 0 12px; max-width: 46ch; }
-.lost p[lang="cs"] { font-size: 15px; opacity: .8; }
+.lost p { font-size: var(--text-l); line-height: 1.7; margin: 0 0 12px; max-width: 46ch; }
+.lost p[lang="cs"] { font-size: var(--text-m); opacity: .8; }
 .lost-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 12px; }
 .lost-links .card-link { background: var(--card); border-color: var(--soft); color: var(--ink); }
 .lost-compass { justify-self: center; width: min(100%, 240px); color: var(--soft); }
