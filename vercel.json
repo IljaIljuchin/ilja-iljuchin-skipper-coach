@@ -1,21 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/skipper", "destination": "/skipper.html" },
-    { "source": "/coach", "destination": "/coach.html" }
-  ],
-  "headers": [
+  "routes": [
+    { "handle": "filesystem" },
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800" }
-      ]
+      "src": "/(.*)",
+      "dest": "/maintenance.html",
+      "status": 503,
+      "headers": { "Retry-After": "3600", "Cache-Control": "no-store" }
     }
   ]
 }

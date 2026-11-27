@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://ilja-iljuchin-skipper-coach.vercel.app/sitemap.xml
