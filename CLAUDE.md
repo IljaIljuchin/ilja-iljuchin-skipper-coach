@@ -3,6 +3,7 @@
 ## Project Overview
 Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how it is described lives in the HTML pages themselves; treat the pages, not this file, as the source of truth for content.
 - **Branches & Deployment:** All active development happens on the `dev` branch; `main` currently holds only a provisional placeholder page. Hosted on Vercel (`vercel.json`); every push to `dev` creates a preview deployment.
+- **Maintenance mode:** branch `maintenance` holds a standalone page served with HTTP 503 for every URL (see its `README.md`). Switch it on by promoting its Vercel deployment to production; switch it off by promoting the latest `main` deployment. Never merge `maintenance` into `dev` or `main`.
 - **Stack:** Plain HTML + one stylesheet (`theme.css`) + one small script (`site.js`). No build step, no frameworks.
 
 ## Key Files
