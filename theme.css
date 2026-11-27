@@ -125,7 +125,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   border: 1px solid var(--soft);
   border-radius: 18px;
 }
-.card h2 { font-size: clamp(28px, 2.4vw, 38px); margin: 0 0 18px; }
+.card h3 { font: 700 19px/1.35 Arial, Helvetica, sans-serif; letter-spacing: -.015em; }
 .qr-row { display: flex; align-items: center; gap: 18px; }
 .qr-row img { flex: none; width: 112px; height: 112px; background: var(--page); border-radius: 8px; }
 .qr-row strong { font-size: 15px; }
@@ -269,14 +269,33 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 .page-bridge h2 { font-size: clamp(26px, 2.4vw, 36px); margin: 0 0 8px; }
 .page-bridge p { font-size: 15px; line-height: 1.6; margin: 0; max-width: 56ch; }
-.bridge-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.bridge-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 8px; }
+/* Same layout on every subpage: main call to action (2/3) + secondary card (1/3). */
 .bridge-cols {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px 32px;
+  gap: 24px clamp(24px, 3vw, 48px);
 }
+.bridge-main { display: grid; justify-items: start; gap: 8px; }
+.bridge-more {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bridge-more:hover { color: var(--accent); }
+.bridge-side {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  padding: 24px;
+  background: var(--page);
+}
+.bridge-side p { font-size: 14px; line-height: 1.55; }
+.bridge-side .card-link { background: var(--card); border-color: var(--soft); }
+.bridge-side .qr-row p { max-width: none; margin: 0; }
 
 /* ---------- Qualifications ---------- */
 .qualifications { padding: 36px 0 54px; border-top: 1px solid var(--soft); }
@@ -327,6 +346,7 @@ footer {
   .experience { grid-row: auto; grid-template-rows: auto; }
   .detail-grid, .detail-grid-2 { grid-template-columns: 1fr; }
   .qual-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bridge-cols { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 800px) {
   .content { grid-template-columns: minmax(0, 1fr); }
@@ -351,6 +371,8 @@ footer {
   .qual-grid li { padding: 16px 18px; }
   .qualifications { padding: 26px 0 36px; }
   .who-row { flex-direction: column; align-items: flex-start; }
+  /* A QR code can't be scanned from the phone showing it; keep only the vCard button. */
+  .bridge-side .qr-row { display: none; }
 }
 @media (max-width: 420px) {
   .experience { padding: 15px; }
