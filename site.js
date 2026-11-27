@@ -8,9 +8,8 @@
   document.querySelectorAll('time.last-updated').forEach(function (el) {
     var updated = new Date(el.getAttribute('datetime'));
     if (isNaN(updated)) return;
-    el.textContent = updated.toLocaleString('en-GB', {
-      day: 'numeric', month: 'long', year: 'numeric',
-      hour: '2-digit', minute: '2-digit'
+    el.textContent = updated.toLocaleDateString('en-GB', {
+      day: 'numeric', month: 'long', year: 'numeric'
     });
   });
 })();

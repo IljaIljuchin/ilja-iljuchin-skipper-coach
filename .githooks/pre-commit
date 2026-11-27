@@ -1,8 +1,8 @@
 #!/bin/sh
-# Stamp the footer "Last updated" time on every staged HTML page.
+# Stamp the footer "Last updated" date on every staged HTML page.
 # Enable once per clone with: git config core.hooksPath .githooks
 now_iso=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-now_text=$(LC_ALL=C date -u "+%-d %B %Y, %H:%M UTC")
+now_text=$(LC_ALL=C date -u "+%-d %B %Y")
 
 git diff --cached --name-only --diff-filter=AM -- '*.html' | while IFS= read -r file; do
   STAMP_ISO="$now_iso" STAMP_TEXT="$now_text" perl -pi -e \
