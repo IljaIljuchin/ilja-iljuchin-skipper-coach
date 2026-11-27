@@ -125,6 +125,9 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .bio p { font-size: 15px; line-height: 1.75; margin: 0 0 13px; }
+.sailing-quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--soft); }
+.sailing-quote blockquote { margin: 0; font: italic 22px/1.4 Georgia, 'Times New Roman', serif; letter-spacing: -.01em; }
+.sailing-quote figcaption { margin-top: 8px; font-size: 14px; opacity: .8; }
 
 
 /* ---------- Domain colors ----------
@@ -219,6 +222,13 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 /* ---------- Subpage sections ---------- */
 .subpage-section { padding: 48px 0 0; }
 .content + .subpage-section { padding-top: 0; }
+.subhead { margin: 12px 0 20px; font-size: clamp(26px, 2.4vw, 34px); }
+
+/* Inverted band that breaks up a long page (e.g. "What we do" on Coach). */
+.band { margin-top: 48px; background: var(--ink); color: var(--card); }
+.band > .subpage-section { padding: 56px 0 20px; }
+.band h2 { color: var(--soft); }
+.band .detail-card { --domain: var(--soft); --marker: var(--soft); }
 .subpage-section h2 { margin: 0 0 20px; }
 .lead { font-size: 18px; line-height: 1.7; max-width: 46rem; margin: 0 0 14px; }
 
@@ -245,17 +255,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .detail-card .card-eyebrow { margin: 0 0 6px; text-transform: uppercase; }
 .detail-card .example { margin-top: 10px; font-size: 14px; opacity: .85; }
 
-/* Call to action inside the page, right where the reader recognises their situation. */
-.inline-cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px 28px;
-  margin: 0 0 44px;
-  padding-top: 24px;
-  border-top: 1px solid var(--soft);
-}
-.inline-cta p { margin: 0; font-size: 18px; line-height: 1.5; max-width: 40rem; }
 .credentials { margin: -16px 0 0; font-size: 14px; line-height: 1.6; }
 .credentials a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .credentials a:hover { color: var(--accent); }
