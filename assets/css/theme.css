@@ -259,6 +259,9 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .habit-arrow { display: inline-block; margin: 0 .25em; font-family: Arial, Helvetica, sans-serif; font-size: .75em; vertical-align: .1em; }
 .band .detail-card { --domain: var(--accent); --marker: var(--card); }
 .band .detail-card h3 { color: var(--soft); }
+.band-block { margin-top: var(--section-gap); }
+.band-block h2 { margin-bottom: 24px; }
+.band .detail-card p { color: var(--card); }
 .band .detail-card.step h3::before { color: var(--page); font-size: 22px; letter-spacing: .02em; }
 
 /* A band used only as a labelled stripe that opens a separate part of a page. */
@@ -278,7 +281,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .detail-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 28px; }
 .detail-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .detail-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 24px; }
-.situations .detail-card .card-eyebrow { margin-bottom: 10px; font-size: 24px; line-height: 1.2; letter-spacing: -.01em; text-transform: none; overflow-wrap: break-word; }
+.situations .detail-card .card-eyebrow { margin-bottom: 10px; font-weight: 400; font-size: 24px; line-height: 1.2; letter-spacing: -.01em; text-transform: none; overflow-wrap: break-word; }
 .situations .detail-card h3 { font: italic 400 20px/1.4 Georgia, 'Times New Roman', serif; letter-spacing: -.01em; color: var(--ink); }
 .detail-card { padding: 2px 0 2px 20px; border-left: 3px solid var(--domain); }
 .detail-card h3 {
