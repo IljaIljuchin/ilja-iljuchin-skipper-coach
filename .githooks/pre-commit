@@ -17,9 +17,11 @@ git diff --cached --name-only --diff-filter=AM -- '*.html' | while IFS= read -r 
   # index.html -> /, coach.html -> /coach, cs/coach.html -> /cs/coach
   path="/${file%.html}"
   path="${path%index}"
+  path="${path%/}"
+  [ -z "$path" ] && path="/"
   if [ -f sitemap.xml ] && grep -q "<loc>https://www.iljuchin.com${path}</loc>" sitemap.xml; then
     LOC="https://www.iljuchin.com${path}" TODAY="$today" perl -0pi -e \
-      's{(<loc>\Q$ENV{LOC}\E</loc>\s*<lastmod>)[^<]*}{$1$ENV{TODAY}}' sitemap.xml
+      's{(<loc>\Q$ENV{LOC}\E</loc>(?:\s*<xhtml:link[^>]*/>)*\s*<lastmod>)[^<]*}{$1$ENV{TODAY}}' sitemap.xml
     git add sitemap.xml
   fi
 done

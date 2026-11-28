@@ -3,7 +3,7 @@
   <url>
     <loc>https://www.iljuchin.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs"/>
     <lastmod>2026-11-28</lastmod>
   </url>
   <url>
@@ -25,27 +25,27 @@
     <lastmod>2026-11-28</lastmod>
   </url>
   <url>
-    <loc>https://www.iljuchin.com/cs/</loc>
+    <loc>https://www.iljuchin.com/cs</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/"/>
-    <lastmod>1970-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs"/>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://www.iljuchin.com/cs/coach</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/coach"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/coach"/>
-    <lastmod>1970-01-01</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://www.iljuchin.com/cs/skipper</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/skipper"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/skipper"/>
-    <lastmod>1970-01-01</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://www.iljuchin.com/cs/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/about"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/about"/>
-    <lastmod>1970-01-01</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
 </urlset>

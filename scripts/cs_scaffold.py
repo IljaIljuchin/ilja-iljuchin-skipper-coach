@@ -26,7 +26,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def url(page, lang):
     path = '' if page == 'index' else page
-    return f'{BASE}/cs/{path}' if lang == 'cs' else f'{BASE}/{path}'
+    return (f'{BASE}/cs/{path}' if path else f'{BASE}/cs') if lang == 'cs' else f'{BASE}/{path}'
 
 
 def read(rel):
@@ -56,7 +56,7 @@ def scaffold():
         s = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex,follow">', s, count=1)
         # internal navigation and links stay inside the Czech version
         s = re.sub(r'href="/(coach|skipper|about)(#[^"]*)?"', lambda m: f'href="/cs/{m.group(1)}{m.group(2) or ""}"', s)
-        s = s.replace('href="/"', 'href="/cs/"')
+        s = s.replace('href="/"', 'href="/cs"')
         s = s.replace('Last updated:', 'Aktualizováno:')
         s = s.replace('<head>', '<head>\n<!-- Czech version: translate the visible text, then run scripts/cs_scaffold.py publish '
                       f'{page} -->', 1)
@@ -88,7 +88,7 @@ def publish(page):
     cs_rel = f'cs/{page}.html'
     if not os.path.exists(os.path.join(ROOT, cs_rel)):
         sys.exit(f'{cs_rel} does not exist; run "scaffold" first')
-    cs_path = '/cs/' if page == 'index' else f'/cs/{page}'
+    cs_path = '/cs' if page == 'index' else f'/cs/{page}'
     en_path = '/' if page == 'index' else f'/{page}'
 
     cs = read(cs_rel)
