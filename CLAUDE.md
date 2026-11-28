@@ -58,6 +58,8 @@ Caching: only `/assets/img/` and `/assets/docs/` get a 7-day cache; CSS and JS a
 
 References: a full-width cream stripe (`.references`, `data-references`) on Home, Coach, Programs and Skipper shows one quote at a time with dots (site.js). The blocks are `hidden` until real, consented quotes replace the placeholders; preview with `?references` in the URL. Never publish invented quotes.
 
+Forms (Tally): CV request EN `tally.so/r/X54beO`, CZ `tally.so/r/VpJb2N` (linked from Coach/Skipper with `?cv=coaching|skipper`); programme enquiry EN `tally.so/r/QoVzPl`, CZ `tally.so/r/6DNWao` (linked from Programs). Each redirects to the matching `/thanks-cv` or `/thanks-enquiry` page.
+
 Personal data: the site itself collects and stores nothing. Bookings go to cal.com; any form (CV request, enquiries, newsletter) must link out to an external, EU/GDPR-ready service rather than post to this site. Prefer plain links over embedded widgets, so the CSP stays strict.
 
 Security: `vercel.json` sets a Content-Security-Policy. No inline scripts (JSON-LD data blocks are fine) and no inline styles; new external hosts must be added to the policy.

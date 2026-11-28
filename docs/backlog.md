@@ -3,7 +3,6 @@
 Work that is planned but not scheduled yet. Newest decisions first.
 
 ## Next
-- **Tally forms** – create 'Request my CV' and 'Programme enquiry', then replace the CV mailto links on Coach and Skipper and add the enquiry link on Programs (EN + CZ).
 - **References** – collect consented quotes, fill the hidden reference stripes on Home, Coach, Programs, Skipper (EN + CZ), remove `hidden`.
 - **Risk Policy** – replace the draft `assets/docs/risk-policy.pdf` with the real document,
   then remove its `X-Robots-Tag: noindex` header in `vercel.json`.
