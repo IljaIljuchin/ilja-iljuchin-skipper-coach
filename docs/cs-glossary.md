@@ -9,7 +9,7 @@ Keep terms consistent across all Czech pages. Proposals only; confirm before tra
 | Offshore Skippering | Skipperování na moři | |
 | Leadership at sea | Leadership na moři | |
 | Typical skippering | Klasické skipperování | |
-| Book a call | Domluvit hovor | |
+| Book a call | Domluvit konzultaci | the free intro call is a „konzultace“, never „hovor“ or „schůzka“ |
 | Ready to talk? | Promluvíme si? | |
 | How we work together | Jak spolupracujeme | |
 | What you can book | Co si můžete objednat | |
@@ -20,4 +20,5 @@ Keep terms consistent across all Czech pages. Proposals only; confirm before tra
 | Follow the journey | Sledujte cestu | |
 | Prefer to reach me directly? | Raději napřímo? | |
 | Save my contact | Uložit kontakt | |
+| Reading & Learning | Četba a vzdělávání | |
 | Last updated | Aktualizováno | set automatically by the scaffold script |
