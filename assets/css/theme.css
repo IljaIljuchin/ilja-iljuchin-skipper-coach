@@ -143,6 +143,7 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 .portrait-col { justify-self: end; display: grid; justify-items: center; gap: 24px; width: 100%; max-width: 340px; }
 .portrait-col .portrait { justify-self: center; width: clamp(160px, 17vw, 230px); }
 .portrait-col .quote { margin: 0; }
+.quote-col { align-self: center; }
 .portrait-col .quote blockquote { font-size: 19px; }
 .bio p { font-size: var(--text-l); line-height: 1.75; margin: 0 0 13px; }
 .quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--accent); }
@@ -308,16 +309,6 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 
 
-.story {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 24px clamp(24px, 3vw, 48px);
-}
-.photo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.photo-pair figure { margin: 0; text-align: center; }
-.photo-pair img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
-.photo-pair figcaption { margin-top: 8px; font-size: 13px; font-weight: 700; opacity: .72; }
 .value-cols { align-items: start; }
 .value-col { display: grid; gap: 24px; }
 .col-label { margin: 0; font: 700 14px/1.3 Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
@@ -499,8 +490,6 @@ footer {
   .bridge-cols { grid-template-columns: minmax(0, 1fr); }
   .faq { grid-template-columns: minmax(0, 1fr); }
   .faq-intro { position: static; }
-  .story { grid-template-columns: minmax(0, 1fr); }
-  .photo-pair { max-width: 360px; }
   .bridge-side { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--soft); }
   .lost { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .lost-compass { display: none; }
