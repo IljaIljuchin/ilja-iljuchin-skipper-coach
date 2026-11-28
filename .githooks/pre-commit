@@ -35,3 +35,9 @@ if git diff --cached --name-only | grep -qE '^assets/(css/theme\.css|js/site\.js
     git add "$page"
   done
 fi
+
+# Privacy PDFs are generated from the privacy pages; regenerate them whenever
+# a privacy page or the stylesheet changes.
+if git diff --cached --name-only | grep -qE '^(privacy\.html|cs/privacy\.html|assets/css/theme\.css)$'; then
+  sh scripts/privacy_pdf.sh && git add assets/docs/iljuchin-privacy-en.pdf assets/docs/iljuchin-privacy-cs.pdf
+fi

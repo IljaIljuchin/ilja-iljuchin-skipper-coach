@@ -95,6 +95,19 @@
           "value": "text/vcard; charset=utf-8"
         }
       ]
+    },
+    {
+      "source": "/assets/docs/iljuchin-privacy-(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ]
 }

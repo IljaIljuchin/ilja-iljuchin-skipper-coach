@@ -292,11 +292,9 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
 }
 .detail-card .card-eyebrow { margin: 0 0 6px; text-transform: uppercase; }
 /* Audience tags right under "Who this is for", same type as card eyebrows. */
-.audience { display: flex; flex-wrap: wrap; gap: 6px 0; margin: -6px 0 20px; padding: 0; list-style: none; color: var(--accent); font: 700 13px/1.4 Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.audience { display: flex; flex-wrap: wrap; gap: 6px 0; margin: -6px 0 20px; padding: 0; list-style: none; color: var(--action); font: 700 13px/1.4 Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
 .audience li { white-space: nowrap; }
 .audience li:not(:last-child)::after { content: '·'; margin: 0 10px; opacity: .6; }
-.audience.is-coaching { color: var(--action); }
-.audience.is-programs { color: var(--ink); }
 .detail-card .example { margin-top: 10px; font-size: var(--text-s); opacity: .85; }
 
 
@@ -468,6 +466,31 @@ footer a:hover { color: var(--accent); }
 .privacy a { text-decoration: underline; text-underline-offset: 3px; }
 .privacy + .privacy { padding-top: 32px; }
 .privacy:last-of-type { padding-bottom: var(--section-gap); }
+.privacy-download { padding-top: 32px; }
+.privacy p + p { margin-top: 10px; }
+.privacy .effective { margin-top: 20px; opacity: .8; }
+.retention { width: 100%; max-width: 46rem; margin: 0 0 12px; border-collapse: collapse; font-size: var(--text-m); line-height: 1.5; }
+.retention th, .retention td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--soft); text-align: left; vertical-align: top; }
+.retention th { font-weight: 700; }
+.print-only { display: none; }
+
+/* ---------- Print (used to generate the privacy PDFs) ---------- */
+@page { size: A4; margin: 18mm 16mm 20mm; @bottom-right { content: counter(page) " / " counter(pages); font: 9pt Arial, Helvetica, sans-serif; color: #234B78; } }
+@media print {
+  body { font-size: 10.5pt; }
+  .hero, .site-nav, .skip-link, footer, .no-print { display: none !important; }
+  .print-only { display: block; }
+  .print-header { padding: 0 0 10px; margin-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  .print-header p { margin: 0 0 2px; font-size: 9.5pt; }
+  .print-header .print-title { margin-bottom: 6px; font: 400 24pt/1.1 Georgia, 'Times New Roman', serif; letter-spacing: -.02em; }
+  .wrap { width: 100%; }
+  .privacy { padding-top: 14px !important; break-inside: avoid-page; }
+  .privacy h2 { font-size: 15pt; margin-bottom: 6px; }
+  .privacy p, .privacy li, .retention { font-size: 10.5pt; max-width: none; }
+  .privacy:last-of-type { padding-bottom: 0; }
+  a { color: var(--accent); text-decoration: underline; }
+  .visually-hidden { display: none; }
+}
 .thanks { padding-bottom: var(--section-gap); }
 .thanks .bridge-actions { margin-top: 12px; }
 .thanks-follow { margin: 36px 0 0; padding-top: 24px; border-top: 1px solid var(--soft); font-size: var(--text-m); }

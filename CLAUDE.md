@@ -14,7 +14,7 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `runs.html` — Voyages, workshops and expeditions: planned, underway (hidden section until needed), and logbook.
 - `about.html` — Background, story, and credentials.
 - `thanks-cv.html`, `thanks-enquiry.html` (+ `cs/`) — Thank-you pages that Tally forms redirect to (noindex, not in sitemap).
-- `privacy.html`, `cs/privacy.html` — Privacy notice (noindex, linked from every footer). Update it whenever a new external service is added.
+- `privacy.html`, `cs/privacy.html` — Privacy notice (noindex, linked from every footer). Update it whenever a new external service is added. Its PDFs (`assets/docs/iljuchin-privacy-en.pdf`, `-cs.pdf`) are printed from these pages by `scripts/privacy_pdf.sh` (headless Chrome, print stylesheet); the pre-commit hook regenerates them whenever a privacy page or `theme.css` changes.
 - `assets/css/theme.css` — Design tokens (`:root` colors) and all layout/component classes.
 - `assets/js/site.js` — Footer copyright year and "Last updated" date in the page's locale.
 - `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`; when `theme.css` or `site.js` changes it bumps `?v=` on their links in all pages (cache busting). Enable per clone with `git config core.hooksPath .githooks`.
