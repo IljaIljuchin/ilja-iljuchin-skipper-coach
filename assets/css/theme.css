@@ -81,8 +81,6 @@ h2 { font-size: clamp(36px, 3.4vw, 55px); margin: 12px 0 18px; }
 }
 .site-nav a:hover { opacity: 1; border-bottom-color: var(--accent); }
 .site-nav a[aria-current="page"] { opacity: 1; border-bottom-color: var(--action); }
-/* Language switch, added by scripts/cs_scaffold.py when a Czech page is published. */
-.site-nav .lang-switch { margin-left: auto; letter-spacing: .08em; }
 
 /* ---------- Hero ---------- */
 .hero {

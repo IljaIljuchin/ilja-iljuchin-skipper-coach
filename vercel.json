@@ -23,6 +23,28 @@
       ],
       "destination": "/",
       "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "iljuchin.cz"
+        }
+      ],
+      "destination": "https://www.iljuchin.com/cs/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.iljuchin.cz"
+        }
+      ],
+      "destination": "https://www.iljuchin.com/cs/:path*",
+      "permanent": true
     }
   ],
   "headers": [
