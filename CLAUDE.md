@@ -16,9 +16,10 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `assets/js/site.js` — Footer copyright year and "Last updated" date in the page's locale.
 - `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`; when `theme.css` or `site.js` changes it bumps `?v=` on their links in all pages (cache busting). Enable per clone with `git config core.hooksPath .githooks`.
 - `404.html` — Not-found page (dark theme).
-- `assets/img/` — Images: `portrait.jpg` (sailing portrait), `headshot.jpg` (business portrait, also in JSON-LD), `sunset.jpg`, `og-image.jpg` (default share image), `og-coach.jpg` (Coach share image), `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
+- `assets/img/` — Images: `hero-1600.webp`, `hero-800.webp`, `hero-800.jpg` and `sunset.jpg` (hero background; WebP with JPEG fallback, smaller files on phones), `portrait.jpg` (sailing portrait), `headshot.jpg` (business portrait, also in JSON-LD), `sunset.jpg`, `og-image.jpg` (default share image), `og-coach.jpg` (Coach share image), `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
 - `assets/docs/` — Downloadable documents (`risk-policy.pdf`, currently a draft served with `noindex`).
 - Root-level files that must stay where they are: `contact.vcf` (its URL is encoded in printed QR codes), `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `robots.txt`, `sitemap.xml`, `vercel.json`.
+- `docs/backlog.md` — Planned work that is not scheduled yet. `docs/`, `scripts/`, `.githooks/` and this file are excluded from deployment by `.vercelignore`.
 - `vercel.json` — `cleanUrls` (pages are served as `/coach`, `/skipper`, …; `.html` URLs redirect) and response headers.
 - `sitemap.xml` & `robots.txt` — Search indexing metadata. `runs.html` is `noindex` and left out of the sitemap until it has real content.
 
@@ -55,7 +56,7 @@ Security: `vercel.json` sets a Content-Security-Policy. No inline scripts (JSON-
 `404.html` uses the dark theme (`body.theme-dark`) and absolute paths (`/assets/css/theme.css`, `/coach`), because Vercel serves it for any missing URL.
 
 ## Czech Version (planned)
-Czech is the only other language that will be added.
+Czech is the only other language that will be added. Tooling is ready: `scripts/cs_scaffold.py` (`scaffold` creates `cs/*.html` copies with `noindex`; `publish <page>` adds hreflang, the EN/CS switch and sitemap alternates) and `docs/cs-glossary.md` for consistent terms.
 - **URLs:** English stays at the root; Czech pages mirror it under `/cs/` with the same slugs (`/cs/`, `/cs/coach`, `/cs/skipper`, `/cs/about`, `/cs/runs`). Files: `cs/index.html`, `cs/coach.html`, …
 - **Markup:** Czech pages use `<html lang="cs">` and `og:locale` `cs_CZ`. `site.js` already formats dates by the page language.
 - **When the first Czech page goes live:** add `<link rel="alternate" hreflang="en|cs|x-default">` to both language versions, add `og:locale:alternate`, add a language switch to `.site-nav`, and list both versions in `sitemap.xml` with `xhtml:link` alternates. Do not add hreflang links before the Czech page exists.

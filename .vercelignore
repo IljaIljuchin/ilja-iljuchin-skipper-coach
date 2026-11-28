@@ -1,0 +1,5 @@
+# Files that are part of the repository but must not be published on the website.
+CLAUDE.md
+.githooks
+docs
+scripts
