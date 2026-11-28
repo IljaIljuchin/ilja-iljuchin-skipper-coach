@@ -21,4 +21,5 @@ Keep terms consistent across all Czech pages. Proposals only; confirm before tra
 | Prefer to reach me directly? | Raději napřímo? | |
 | Save my contact | Uložit kontakt | |
 | Reading & Learning | Četba a vzdělávání | |
+| coaching session | sezení | one coaching meeting; „rozhovor“ only for the nature of coaching (a structured conversation) |
 | Last updated | Aktualizováno | set automatically by the scaffold script |
