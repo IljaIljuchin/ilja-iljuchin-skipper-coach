@@ -527,6 +527,9 @@ footer a:hover { color: var(--accent); }
   .content { gap: 25px; }
 }
 @media (max-width: 620px) {
+  /* Keep the whole navigation, incl. the language switch, on one line on phones. */
+  .site-nav { flex-wrap: nowrap; gap: 0 clamp(8px, 3.2vw, 16px); padding-top: 16px; }
+  .site-nav a { font-size: clamp(11.5px, 3.5vw, 14px); white-space: nowrap; }
   :root {
     --hero-shade: linear-gradient(100deg, rgba(250,246,240,.98), rgba(250,246,240,.86) 54%, rgba(250,246,240,.24));
   }

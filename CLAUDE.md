@@ -30,7 +30,7 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 
 ## Page Structure
 Every page follows the same skeleton; keep it identical across pages.
-1. `<head>`: title `Ilja Iljuchin — <Page>` (same text in `og:title` and `twitter:title`), description, canonical, Open Graph/Twitter tags, favicons, `theme.css`.
+1. `<head>`: a search-friendly title that names the service and keeps the name, e.g. `Leadership Coaching in Prague | Ilja Iljuchin` (same text in `og:title` and `twitter:title`; utility pages keep `Ilja Iljuchin — <Page>`), description, canonical, Open Graph/Twitter tags, favicons, `theme.css`.
 2. Hero (`.hero`): primary navigation (`.site-nav`, same links on every page, `aria-current` on the active one), `h1` with `.role`, `.tagline`, and exactly one `.cta`.
 3. Content sections (`.subpage-section`). Items in `.detail-grid` are flat `.detail-card`s with a thin domain line; How sections use numbered `.steps`.
 4. Bottom section (`.page-bridge` > `.bridge-cols`): main call to action on the left (2/3), the shared "Prefer to reach me directly?" QR card (`.bridge-side`) on the right (1/3). Home has no bottom section; it ends with the "Brief → Act → Debrief → Repeat" band.
@@ -50,13 +50,13 @@ FAQ (`coach.html`, `programs.html`, `skipper.html`): `.faq` section with `.faq-i
 
 Structured data (JSON-LD): `index.html` holds the full `Person` (`@id` `https://www.iljuchin.com/#person`, credentials, languages, profiles), `WebSite`, and `ProfessionalService` (OSVČ, IČO 88162541, Prague). Other pages reference the person by `@id` and add `Service`, `FAQPage`, `AboutPage`, and `BreadcrumbList`. Keep credentials in sync with the About page.
 
-Navigation order on every page: Home · Coach · Programs · Skipper · About · cz/en. Home shows three cards (Leadership Coaching · Leadership at Sea · Offshore Skippering); Leadership at Sea uses the ink-blue domain colour (`.programs`).
+Navigation order on every page: Home · Coach · Programmes · Skipper · About · cz/en (one line on phones). English copy is British (programme, organisation); the URL stays `/programs`. Home shows three cards (Leadership Coaching · Leadership at Sea · Offshore Skippering); Leadership at Sea uses the ink-blue domain colour (`.programs`).
 
 Runs is parked: `runs.html` exists but is not linked from any page's navigation, has `noindex`, is not in `sitemap.xml`, and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish it, add the nav link back on every page, remove `noindex` and the redirect, and add it to the sitemap.
 
 Caching: only `/assets/img/` and `/assets/docs/` get a 7-day cache; CSS and JS are revalidated on every load, so style changes show up immediately.
 
-References: a full-width cream stripe (`.references`, `data-references`) on Home, Coach, Programs and Skipper shows one quote at a time with dots (site.js). The blocks are `hidden` until real, consented quotes replace the placeholders; preview with `?references` in the URL. Never publish invented quotes.
+References: the stripe template (one quote at a time with dots) is in `docs/references-template.md`; CSS `.references` and the carousel in site.js are ready. Insert it only with real, consented quotes. Never publish invented or placeholder quotes, not even hidden.
 
 Forms (Tally): CV request EN `tally.so/r/X54beO`, CZ `tally.so/r/VpJb2N` (linked from Coach/Skipper with `?cv=coaching|skipper`); programme enquiry EN `tally.so/r/QoVzPl`, CZ `tally.so/r/6DNWao` (linked from Programs with `?programme=leadership-at-sea`). Each redirects to the matching `/thanks-cv` or `/thanks-enquiry` page.
 
