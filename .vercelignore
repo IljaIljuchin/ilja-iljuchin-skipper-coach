@@ -1,5 +1,6 @@
-# Files that are part of the repository but must not be published on the website.
-CLAUDE.md
-.githooks
-docs
-scripts
+# Repository-only files that must not be published on the website.
+# Leading slash = only the top-level item (assets/docs must stay published).
+/CLAUDE.md
+/.githooks
+/docs
+/scripts
