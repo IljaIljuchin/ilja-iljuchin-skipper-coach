@@ -13,6 +13,7 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `skipper.html` — Typical skippering for owners, crews and charter guests.
 - `runs.html` — Voyages, workshops and expeditions: planned, underway (hidden section until needed), and logbook.
 - `about.html` — Background, story, and credentials.
+- `privacy.html`, `cs/privacy.html` — Privacy notice (noindex, linked from every footer). Update it whenever a new external service is added.
 - `assets/css/theme.css` — Design tokens (`:root` colors) and all layout/component classes.
 - `assets/js/site.js` — Footer copyright year and "Last updated" date in the page's locale.
 - `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`; when `theme.css` or `site.js` changes it bumps `?v=` on their links in all pages (cache busting). Enable per clone with `git config core.hooksPath .githooks`.
@@ -53,6 +54,8 @@ Navigation order on every page: Home · Coach · Programs · Skipper · About ·
 Runs is parked: `runs.html` exists but is not linked from any page's navigation, has `noindex`, is not in `sitemap.xml`, and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish it, add the nav link back on every page, remove `noindex` and the redirect, and add it to the sitemap.
 
 Caching: only `/assets/img/` and `/assets/docs/` get a 7-day cache; CSS and JS are revalidated on every load, so style changes show up immediately.
+
+References: a full-width cream stripe (`.references`, `data-references`) on Home, Coach, Programs and Skipper shows one quote at a time with dots (site.js). The blocks are `hidden` until real, consented quotes replace the placeholders; preview with `?references` in the URL. Never publish invented quotes.
 
 Personal data: the site itself collects and stores nothing. Bookings go to cal.com; any form (CV request, enquiries, newsletter) must link out to an external, EU/GDPR-ready service rather than post to this site. Prefer plain links over embedded widgets, so the CSP stays strict.
 
