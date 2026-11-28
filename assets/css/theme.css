@@ -465,8 +465,10 @@ footer a:hover { color: var(--accent); }
 .privacy p { margin: 0; }
 .privacy a { text-decoration: underline; text-underline-offset: 3px; }
 .privacy + .privacy { padding-top: 32px; }
-.privacy:last-of-type { padding-bottom: var(--section-gap); }
-.privacy-download { padding-top: 32px; }
+.privacy:last-of-type { padding-bottom: 32px; }
+.privacy-download { padding: 0 0 var(--section-gap); }
+.pill-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border: 1px solid var(--soft); border-radius: 999px; font-size: var(--text-s); font-weight: 700; }
+.pill-link:hover { border-color: var(--accent); color: var(--accent); }
 .privacy p + p { margin-top: 10px; }
 .privacy .effective { margin-top: 20px; opacity: .8; }
 .retention { width: 100%; max-width: 46rem; margin: 0 0 12px; border-collapse: collapse; font-size: var(--text-m); line-height: 1.5; }
