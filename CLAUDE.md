@@ -13,7 +13,7 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `runs.html` — Voyages, workshops and expeditions: planned, underway (hidden section until needed), and logbook.
 - `about.html` — Background, story, and credentials.
 - `assets/css/theme.css` — Design tokens (`:root` colors) and all layout/component classes.
-- `assets/js/site.js` — Marks preview hosts (`.is-preview`), footer copyright year, and "Last updated" date in the page's locale.
+- `assets/js/site.js` — Footer copyright year and "Last updated" date in the page's locale.
 - `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`; when `theme.css` or `site.js` changes it bumps `?v=` on their links in all pages (cache busting). Enable per clone with `git config core.hooksPath .githooks`.
 - `404.html` — Not-found page (dark theme).
 - `assets/img/` — Images: `portrait.jpg` (sailing portrait), `headshot.jpg` (business portrait, also in JSON-LD), `sunset.jpg`, `og-image.jpg` (default share image), `og-coach.jpg` (Coach share image), `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
@@ -46,7 +46,7 @@ FAQ (`coach.html`, `skipper.html` only): `.faq` section with `.faq-intro` (headi
 
 Structured data (JSON-LD): `index.html` holds the full `Person` (`@id` `https://www.iljuchin.com/#person`, credentials, languages, profiles), `WebSite`, and `ProfessionalService` (OSVČ, IČO 88162541, Prague). Other pages reference the person by `@id` and add `Service`, `FAQPage`, `AboutPage`, and `BreadcrumbList`. Keep credentials in sync with the About page.
 
-Runs is work in progress: its nav link has `data-preview-only` (hidden unless `site.js` detects a non-production host) and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish Runs, remove both, drop its `noindex`, and add it to `sitemap.xml`.
+Runs is parked: `runs.html` exists but is not linked from any page's navigation, has `noindex`, is not in `sitemap.xml`, and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish it, add the nav link back on every page, remove `noindex` and the redirect, and add it to the sitemap.
 
 Caching: only `/assets/img/` and `/assets/docs/` get a 7-day cache; CSS and JS are revalidated on every load, so style changes show up immediately.
 

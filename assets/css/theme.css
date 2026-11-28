@@ -51,9 +51,6 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
-/* Pages and links marked data-preview-only (e.g. Runs) show only on dev/preview hosts; site.js adds .is-preview. */
-[data-preview-only] { display: none; }
-.is-preview [data-preview-only] { display: revert; }
 ::selection { background: var(--soft); color: var(--ink); }
 .wrap { width: min(88%, 1280px); margin: auto; }
 
