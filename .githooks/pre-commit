@@ -7,6 +7,8 @@ now_text=$(LC_ALL=C date -u "+%-d %B %Y")
 today=$(date -u +%Y-%m-%d)
 
 git diff --cached --name-only --diff-filter=AM -- '*.html' | while IFS= read -r file; do
+  # Keep the FAQPage structured data in sync with the visible FAQ.
+  python3 .githooks/faq_schema.py "$file"
   STAMP_ISO="$now_iso" STAMP_TEXT="$now_text" perl -pi -e \
     's{<time class="last-updated" datetime="[^"]*">[^<]*</time>}{<time class="last-updated" datetime="$ENV{STAMP_ISO}">$ENV{STAMP_TEXT}</time>}g' \
     "$file"
