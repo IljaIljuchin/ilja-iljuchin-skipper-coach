@@ -139,6 +139,11 @@ h1 { font-size: clamp(66px, 8vw, 120px); margin: 14px 0 4px; }
   border-radius: 50%;
 }
 .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Portrait with a quote underneath (Home). */
+.portrait-col { justify-self: end; display: grid; justify-items: center; gap: 24px; width: 100%; max-width: 340px; }
+.portrait-col .portrait { justify-self: center; width: clamp(160px, 17vw, 230px); }
+.portrait-col .quote { margin: 0; }
+.portrait-col .quote blockquote { font-size: 19px; }
 .bio p { font-size: var(--text-l); line-height: 1.75; margin: 0 0 13px; }
 .quote { margin: 28px 0 0; padding-left: 20px; border-left: 3px solid var(--accent); }
 .quote blockquote { margin: 0; font: italic 22px/1.4 Georgia, 'Times New Roman', serif; letter-spacing: -.01em; }
@@ -503,6 +508,8 @@ footer {
 @media (max-width: 800px) {
   .content { grid-template-columns: minmax(0, 1fr); }
   .portrait { justify-self: start; width: clamp(160px, 44vw, 240px); }
+  .portrait-col { justify-self: start; justify-items: start; max-width: 46rem; }
+  .portrait-col .portrait { justify-self: start; }
 }
 @media (max-width: 760px) {
   .wrap { width: 90%; }
