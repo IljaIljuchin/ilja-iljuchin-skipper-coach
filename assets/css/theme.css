@@ -461,6 +461,7 @@ footer a:hover { color: var(--accent); }
 .privacy:last-of-type { padding-bottom: var(--section-gap); }
 .thanks { padding-bottom: var(--section-gap); }
 .thanks .bridge-actions { margin-top: 12px; }
+.thanks-follow { margin: 36px 0 0; padding-top: 24px; border-top: 1px solid var(--soft); font-size: var(--text-m); }
 
 /* ---------- Dark theme (404 page) ---------- */
 .theme-dark {
