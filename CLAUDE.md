@@ -54,6 +54,8 @@ Runs is parked: `runs.html` exists but is not linked from any page's navigation,
 
 Caching: only `/assets/img/` and `/assets/docs/` get a 7-day cache; CSS and JS are revalidated on every load, so style changes show up immediately.
 
+Personal data: the site itself collects and stores nothing. Bookings go to cal.com; any form (CV request, enquiries, newsletter) must link out to an external, EU/GDPR-ready service rather than post to this site. Prefer plain links over embedded widgets, so the CSP stays strict.
+
 Security: `vercel.json` sets a Content-Security-Policy. No inline scripts (JSON-LD data blocks are fine) and no inline styles; new external hosts must be added to the policy.
 
 `404.html` uses the dark theme (`body.theme-dark`) and absolute paths (`/assets/css/theme.css`, `/coach`), because Vercel serves it for any missing URL.
@@ -65,7 +67,7 @@ Live under `/cs/` (`cs/index.html`, `cs/coach.html`, `cs/skipper.html`, `cs/abou
 - All pages reference assets with absolute paths (`/assets/...`), so Czech pages share them unchanged.
 
 ## Working Rules for Claude Code
-1. **Language:** All site copy, filenames, identifiers, and code comments are in English. A Czech version will be added later.
+1. **Language:** The site is bilingual: English at the root, Czech under `/cs/`. Every copy change goes into both languages. Filenames, identifiers, code comments and commit messages stay in English.
 2. **Plan before editing:** For multi-file changes, layout shifts, or copy rewrites, propose a concise plan first and wait for confirmation unless explicitly asked to apply immediately.
 3. **Preserve design & structure:** Reuse existing classes and the color tokens in `assets/css/theme.css`; no inline styles and no heavy dependencies. Keep layouts on simple fractions (1/2, 1/3 + 2/3, 1/4 …).
 4. **Tone & copywriting:** Clear, direct, human, and conversational. Avoid stiff corporate buzzwords and unexplained jargon or acronyms.
