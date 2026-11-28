@@ -14,7 +14,7 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `about.html` — Background, story, and credentials.
 - `assets/css/theme.css` — Design tokens (`:root` colors) and all layout/component classes.
 - `assets/js/site.js` — Marks preview hosts (`.is-preview`), footer copyright year, and "Last updated" date in the page's locale.
-- `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`. Enable per clone with `git config core.hooksPath .githooks`.
+- `.githooks/pre-commit` — Stamps `<time class="last-updated">` in every committed HTML page and updates that page's `<lastmod>` in `sitemap.xml`; when `theme.css` or `site.js` changes it bumps `?v=` on their links in all pages (cache busting). Enable per clone with `git config core.hooksPath .githooks`.
 - `404.html` — Not-found page (dark theme).
 - `assets/img/` — Images: `portrait.jpg` (sailing portrait), `headshot.jpg` (business portrait, also in JSON-LD), `sunset.jpg`, `og-image.jpg` (default share image), `og-coach.jpg` (Coach share image), `contact.svg` (QR code pointing to `https://www.iljuchin.com/contact.vcf`).
 - `assets/docs/` — Downloadable documents (`risk-policy.pdf`, currently a draft served with `noindex`).
@@ -29,7 +29,7 @@ Every page follows the same skeleton; keep it identical across pages.
 1. `<head>`: title `Ilja Iljuchin — <Page>` (same text in `og:title` and `twitter:title`), description, canonical, Open Graph/Twitter tags, favicons, `theme.css`.
 2. Hero (`.hero`): primary navigation (`.site-nav`, same links on every page, `aria-current` on the active one), `h1` with `.role`, `.tagline`, and exactly one `.cta`.
 3. Content sections (`.subpage-section`). Items in `.detail-grid` are flat `.detail-card`s with a thin domain line; How sections use numbered `.steps`.
-4. Bottom section (`.page-bridge` > `.bridge-cols`): main call to action on the left (2/3), the shared "Prefer to reach me directly?" QR card (`.bridge-side`) on the right (1/3).
+4. Bottom section (`.page-bridge` > `.bridge-cols`): main call to action on the left (2/3), the shared "Prefer to reach me directly?" QR card (`.bridge-side`) on the right (1/3). Home has no bottom section; it ends with the "Brief → Act → Debrief → Repeat" band.
 5. Footer: copyright with business name and IČO (`Ing. Ilja Iljuchin · Skipper & Coach · IČO 88162541`) on the left, "Last updated" date on the right; then `site.js` and the Cloudflare analytics script.
 
 Main call to action per page:

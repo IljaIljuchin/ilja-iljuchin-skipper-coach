@@ -21,3 +21,13 @@ git diff --cached --name-only --diff-filter=AM -- '*.html' | while IFS= read -r 
     git add sitemap.xml
   fi
 done
+
+# When the stylesheet or script changes, bump ?v= on their links in every page,
+# so browsers that cached the old file load the new one.
+if git diff --cached --name-only | grep -qE '^assets/(css/theme\.css|js/site\.js)$'; then
+  ver=$(date -u +%Y%m%d%H%M%S)
+  for page in $(git ls-files '*.html'); do
+    VER="$ver" perl -pi -e 's{(/assets/(?:css/theme\.css|js/site\.js))(\?v=\d+)?"}{$1?v=$ENV{VER}"}g' "$page"
+    git add "$page"
+  done
+fi
