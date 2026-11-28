@@ -13,6 +13,12 @@
     <lastmod>2026-11-28</lastmod>
   </url>
   <url>
+    <loc>https://www.iljuchin.com/programs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/programs"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/programs"/>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
     <loc>https://www.iljuchin.com/skipper</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/skipper"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/skipper"/>
@@ -46,6 +52,12 @@
     <loc>https://www.iljuchin.com/cs/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/about"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/about"/>
+    <lastmod>2026-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.iljuchin.com/cs/programs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.iljuchin.com/programs"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.iljuchin.com/cs/programs"/>
     <lastmod>2026-11-28</lastmod>
   </url>
 </urlset>

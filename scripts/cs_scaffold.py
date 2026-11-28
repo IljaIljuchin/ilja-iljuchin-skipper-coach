@@ -20,7 +20,7 @@ import re
 import sys
 
 BASE = 'https://www.iljuchin.com'
-PAGES = ['index', 'coach', 'skipper', 'about']          # Runs is parked
+PAGES = ['index', 'coach', 'programs', 'skipper', 'about']   # Runs is parked
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -49,13 +49,17 @@ def scaffold():
             continue
         s = read(f'{page}.html')
         s = s.replace('<html lang="en">', '<html lang="cs">', 1)
+        # drop language links copied from an already published English page
+        s = re.sub(r'\n<link rel="alternate" hreflang="[^"]*" href="[^"]*">', '', s)
+        s = re.sub(r'\n<meta property="og:locale:alternate" content="[^"]*">', '', s)
+        s = re.sub(r'\n *<a class="lang-switch"[^>]*>[^<]*</a>', '', s)
         s = s.replace('content="en_US"', 'content="cs_CZ"')
         en, cs = url(page, 'en'), url(page, 'cs')
         s = s.replace(f'<link rel="canonical" href="{en}">', f'<link rel="canonical" href="{cs}">')
         s = s.replace(f'<meta property="og:url" content="{en}">', f'<meta property="og:url" content="{cs}">')
         s = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex,follow">', s, count=1)
         # internal navigation and links stay inside the Czech version
-        s = re.sub(r'href="/(coach|skipper|about)(#[^"]*)?"', lambda m: f'href="/cs/{m.group(1)}{m.group(2) or ""}"', s)
+        s = re.sub(r'href="/(coach|programs|skipper|about)(#[^"]*)?"', lambda m: f'href="/cs/{m.group(1)}{m.group(2) or ""}"', s)
         s = s.replace('href="/"', 'href="/cs"')
         s = s.replace('Last updated:', 'Aktualizováno:')
         s = s.replace('<head>', '<head>\n<!-- Czech version: translate the visible text, then run scripts/cs_scaffold.py publish '

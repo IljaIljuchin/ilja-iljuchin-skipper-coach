@@ -9,7 +9,8 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 ## Key Files
 - `index.html` — Home: introduces both sides (coaching and skippering) and links to them.
 - `coach.html` — Coaching page.
-- `skipper.html` — Offshore skippering page.
+- `programs.html` — Leadership at Sea: development programmes on board (format, steps, FAQ).
+- `skipper.html` — Typical skippering for owners, crews and charter guests.
 - `runs.html` — Voyages, workshops and expeditions: planned, underway (hidden section until needed), and logbook.
 - `about.html` — Background, story, and credentials.
 - `assets/css/theme.css` — Design tokens (`:root` colors) and all layout/component classes.
@@ -34,7 +35,7 @@ Every page follows the same skeleton; keep it identical across pages.
 5. Footer: copyright with business name and IČO (`Ing. Ilja Iljuchin · Skipper & Coach · IČO 88162541`) on the left, "Last updated" date on the right; then `site.js` and the Cloudflare analytics script.
 
 Main call to action per page:
-- `index.html`, `coach.html`, `skipper.html`: "Book a call" (cal.com). Secondary options (CV request, link to the other service) go in `.bridge-alt` under the button. No social links here.
+- `index.html`, `coach.html`, `programs.html`, `skipper.html`: "Book a call" / "Domluvit konzultaci" (cal.com). Secondary options (CV request, link to the other service) go in `.bridge-alt` under the button. No social links here.
 - `about.html`, `runs.html`: follow on social media (`.social-btn`; LinkedIn is primary on About, Facebook on Runs). The hero button scrolls to `#follow`.
 
 Visual restraint: boxes (background + border) are reserved for highlights only — the two worlds on Home (`.experience`) and the bottom call-to-action section (`.page-bridge`). Everything else uses thin domain-colored lines. Do not introduce new card styles.
@@ -43,9 +44,11 @@ Domain colors (used on cards, credentials, FAQ, Runs entries):
 - Blue (default or `.sea`): at sea — skippering, voyages, workshops on the water.
 - Pink (`.coaching` or `.shore`): on shore — coaching, workshops and training on land.
 
-FAQ (`coach.html`, `skipper.html` only): `.faq` section with `.faq-intro` (heading only, 1/3) and `.faq-list` (2/3). Each page also carries a `FAQPage` JSON-LD block in `<head>`; whenever a question or answer changes, update both.
+FAQ (`coach.html`, `programs.html`, `skipper.html`): `.faq` section with `.faq-intro` (heading only, 1/3) and `.faq-list` (2/3). Each page also carries a `FAQPage` JSON-LD block in `<head>`; whenever a question or answer changes, update both.
 
 Structured data (JSON-LD): `index.html` holds the full `Person` (`@id` `https://www.iljuchin.com/#person`, credentials, languages, profiles), `WebSite`, and `ProfessionalService` (OSVČ, IČO 88162541, Prague). Other pages reference the person by `@id` and add `Service`, `FAQPage`, `AboutPage`, and `BreadcrumbList`. Keep credentials in sync with the About page.
+
+Navigation order on every page: Home · Coach · Programs · Skipper · About · CZ/EN. Home shows three cards (Leadership Coaching · Leadership at Sea · Offshore Skippering); Leadership at Sea uses the ink-blue domain colour (`.programs`).
 
 Runs is parked: `runs.html` exists but is not linked from any page's navigation, has `noindex`, is not in `sitemap.xml`, and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish it, add the nav link back on every page, remove `noindex` and the redirect, and add it to the sitemap.
 
