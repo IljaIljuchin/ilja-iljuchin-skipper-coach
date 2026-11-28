@@ -459,6 +459,8 @@ footer a:hover { color: var(--accent); }
 .privacy a { text-decoration: underline; text-underline-offset: 3px; }
 .privacy + .privacy { padding-top: 32px; }
 .privacy:last-of-type { padding-bottom: var(--section-gap); }
+.thanks { padding-bottom: var(--section-gap); }
+.thanks .bridge-actions { margin-top: 12px; }
 
 /* ---------- Dark theme (404 page) ---------- */
 .theme-dark {

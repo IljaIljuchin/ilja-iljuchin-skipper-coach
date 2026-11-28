@@ -13,6 +13,7 @@ Personal website of Ilja Iljuchin ("Skipper & Coach"). What is offered and how i
 - `skipper.html` — Typical skippering for owners, crews and charter guests.
 - `runs.html` — Voyages, workshops and expeditions: planned, underway (hidden section until needed), and logbook.
 - `about.html` — Background, story, and credentials.
+- `thanks-cv.html`, `thanks-enquiry.html` (+ `cs/`) — Thank-you pages that Tally forms redirect to (noindex, not in sitemap).
 - `privacy.html`, `cs/privacy.html` — Privacy notice (noindex, linked from every footer). Update it whenever a new external service is added.
 - `assets/css/theme.css` — Design tokens (`:root` colors) and all layout/component classes.
 - `assets/js/site.js` — Footer copyright year and "Last updated" date in the page's locale.
@@ -49,7 +50,7 @@ FAQ (`coach.html`, `programs.html`, `skipper.html`): `.faq` section with `.faq-i
 
 Structured data (JSON-LD): `index.html` holds the full `Person` (`@id` `https://www.iljuchin.com/#person`, credentials, languages, profiles), `WebSite`, and `ProfessionalService` (OSVČ, IČO 88162541, Prague). Other pages reference the person by `@id` and add `Service`, `FAQPage`, `AboutPage`, and `BreadcrumbList`. Keep credentials in sync with the About page.
 
-Navigation order on every page: Home · Coach · Programs · Skipper · About · CZ/EN. Home shows three cards (Leadership Coaching · Leadership at Sea · Offshore Skippering); Leadership at Sea uses the ink-blue domain colour (`.programs`).
+Navigation order on every page: Home · Coach · Programs · Skipper · About · cz/en. Home shows three cards (Leadership Coaching · Leadership at Sea · Offshore Skippering); Leadership at Sea uses the ink-blue domain colour (`.programs`).
 
 Runs is parked: `runs.html` exists but is not linked from any page's navigation, has `noindex`, is not in `sitemap.xml`, and `vercel.json` redirects `/runs` to `/` on `www.iljuchin.com`. To publish it, add the nav link back on every page, remove `noindex` and the redirect, and add it to the sitemap.
 
@@ -64,7 +65,7 @@ Security: `vercel.json` sets a Content-Security-Policy. No inline scripts (JSON-
 `404.html` uses the dark theme (`body.theme-dark`) and absolute paths (`/assets/css/theme.css`, `/coach`), because Vercel serves it for any missing URL.
 
 ## Czech Version
-Live under `/cs/` (`cs/index.html`, `cs/coach.html`, `cs/skipper.html`, `cs/about.html`), with formal "vy" address. Every English page links to its Czech twin with "CZ" and back with "EN" (last item in `.site-nav`, same style as the other links); hreflang (en, cs, x-default), `og:locale:alternate` and sitemap alternates are in place. `iljuchin.cz` and `www.iljuchin.cz` redirect to `/cs/` (vercel.json).
+Live under `/cs/` (`cs/index.html`, `cs/coach.html`, `cs/skipper.html`, `cs/about.html`), with formal "vy" address. Every English page links to its Czech twin with "cz" and back with "en" (lowercase) (last item in `.site-nav`, same style as the other links); hreflang (en, cs, x-default), `og:locale:alternate` and sitemap alternates are in place. `iljuchin.cz` and `www.iljuchin.cz` redirect to `/cs/` (vercel.json).
 - **Any copy change must be made in both languages.** Use `docs/cs-glossary.md` for consistent terms.
 - New pages: `python3 scripts/cs_scaffold.py scaffold` creates the Czech copy (noindex), translate it, then `python3 scripts/cs_scaffold.py publish <page>`.
 - All pages reference assets with absolute paths (`/assets/...`), so Czech pages share them unchanged.

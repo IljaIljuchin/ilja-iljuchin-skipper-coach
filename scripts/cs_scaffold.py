@@ -12,7 +12,7 @@ scaffold
 publish <page>
     Run once a Czech page is translated. Removes its "noindex", adds
     hreflang links (en, cs, x-default) and og:locale:alternate to both the
-    English and the Czech page, adds an EN/CZ switch to both navigations and
+    English and the Czech page, adds an en/cz switch to both navigations and
     lists both versions in sitemap.xml with xhtml:link alternates.
 """
 import os
@@ -99,10 +99,10 @@ def publish(page):
     cs = re.sub(r'<meta name="robots" content="noindex,follow">',
                 '<meta name="robots" content="index,follow,max-image-preview:large">', cs, count=1)
     cs = re.sub(r'\n<!-- Czech version: translate.*?-->', '', cs, count=1)
-    write(cs_rel, add_switch(add_alternates(cs, page), en_path, 'EN', 'en'))
+    write(cs_rel, add_switch(add_alternates(cs, page), en_path, 'en', 'en'))
 
     en = read(f'{page}.html')
-    write(f'{page}.html', add_switch(add_alternates(en, page), cs_path, 'CZ', 'cs'))
+    write(f'{page}.html', add_switch(add_alternates(en, page), cs_path, 'cz', 'cs'))
 
     sm = read('sitemap.xml')
     if 'xmlns:xhtml' not in sm:
